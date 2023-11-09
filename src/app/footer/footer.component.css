@@ -1,0 +1,73 @@
+#Footer{
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+    overflow-x: clip;
+    overflow-y: clip;
+    z-index: -1;
+}
+
+#FooterWhiteBlur{
+    width: 150%;
+    height: 50%;
+    transform: translateX(-10%) translateY(-40%);
+    background-color: white;
+    filter: blur(30px);
+    background-size: cover;
+}
+
+#FooterText{
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    margin-top: auto;
+    margin-bottom: 1%;
+}
+
+
+#FooterImage{
+    width: 100%;
+    height: 50vh;
+    object-fit: cover;
+    opacity: 0.8;
+    position: absolute;
+    z-index: -1;
+}
+
+#AdImage{
+    display: flex;
+    width: 30%;
+    text-align: left;
+}
+
+#AdImage img{
+    min-width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin: 0 5%;
+}
+
+#MiddleText{
+    width: 30%;
+    text-align: center;
+}
+
+#Contact p{
+    margin: 0;
+}
+
+#Socials{
+    width: 30%;
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+#Socials img{
+    width: 50px;
+    height: 50px;
+    margin: 0 5%;
+    align-self: center;
+}
+
