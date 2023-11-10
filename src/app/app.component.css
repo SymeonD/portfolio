@@ -1,3 +1,5 @@
+/* Hero */
+
 #Hero{
     width: 100vw;
     height: 100vh;
@@ -27,8 +29,103 @@
 #HeroWhiteBlur{
     width: 150%;
     height: 50%;
-    transform: translateX(-10%) translateY(180%);
+    transform: translateX(-10%) translateY(185%);
     background-color: white;
     filter: blur(30px);
     background-size: cover;
+}
+
+/* Resume */
+
+#Resume{
+    width: 70%;
+    background-color: white;
+    border-radius: 15px;
+    transform: translateY(-25px);
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    filter: drop-shadow(0px 4px 4px rgba(0,0,0,0.5));
+    cursor: pointer;
+}
+
+#ResumeText{
+    width: 30%;
+    max-height: 100%;
+    padding: 2% 4%;
+    font-family: 'Roboto', sans-serif;
+}
+
+#ResumeImage{
+    width: 70%;
+    max-height: 30vh;
+    padding: 2%;
+    transition: all 1s ease-in-out;
+}
+
+#ResumeImage.expand, #Resume.expand{
+    max-height: 200vh;
+}
+
+#ResumeImage img{
+    width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+    object-position: top;
+    border-radius: 10px;
+}
+
+/* Work with me */
+
+#WorkWithMe{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+}
+
+#WorkWithMe .subTitle{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+#WWMText{
+    display: flex;
+    flex-direction: row;
+    flex-flow: row;
+}
+
+#WhatICanDo, #ContactMe{
+    width: 50%;
+    padding: 5%;
+}
+
+#WhatICanDoTechno img{
+    max-width: 10%;
+    max-height: 10%;
+    padding: 0 1%;
+}
+
+#ContactMe{
+    display: flex;
+    flex-direction: column;
+}
+
+#ContactMe input, #ContactMe textarea{
+    max-width: 100%;
+    border-radius: 5px;
+    border-color: rgba(0,0,0,0.3);
+    margin: 3% 0;
+    padding: 1%;
+}
+
+#ContactMe .FreeText{
+    padding: 1% 1% 10% 1%;
+}
+
+#ContactMe button{
+    background-color: rgba(0,0,0,0);
+    border: none;
+    align-self: end;
 }

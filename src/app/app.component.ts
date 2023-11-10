@@ -14,4 +14,18 @@ import { FooterComponent } from './footer/footer.component';
 })
 export class AppComponent {
   title = 'portfolio';
+
+  ngOnInit(): void {
+    let resumeSection = document.getElementById("Resume");
+    let resumeImage = document.getElementById("ResumeImage");
+    let resumerClickable = document.getElementById("ResumeClickable");
+    resumeSection?.addEventListener("click", function() {
+      resumeImage?.classList.toggle("expand");
+      resumeSection?.classList.toggle("expand");
+      resumerClickable?.classList.toggle("expand");
+    });
+    resumerClickable?.addEventListener("click", function() {
+      resumerClickable?.classList.contains("expand") ? null : null;
+    });
+  }
 }
