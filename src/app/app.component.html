@@ -9,28 +9,78 @@
   <div id="HeroWhiteBlur"></div>
 </div>
 
-<div id="Resume" >
-  <div id="ResumeText">
-    <h3>Here is my resume</h3>
-    <p>If you want your visit to be quick and know already why you should choose me</p>
-  </div>
-  <div id="ResumeImage">
-    <img id="ResumeClickable" src="assets/images/ResumeImage.png" alt="Resume Image">
+<div id="Resumebackground">
+  <div id="Resume" >
+    <div id="ResumeText">
+      <h3>Here is my resume</h3>
+      <p>If you want your visit to be quick and know already why you should choose me</p>
+    </div>
+    <div id="ResumeImage">
+      <img id="ResumeClickable" src="assets/images/ResumeImage.png" alt="Resume Image">
+    </div>
   </div>
 </div>
 
 <div id="Transition">
-  <p>If you want to know more about me</p>
-  <p>Here is my story</p>
+  <div id="TransitionText">
+    <h3>If you want to know more about me</h3>
+    <p>Here is my story</p>
+  </div>
   <!-- Add the images, and parallax effect -->
 </div>
 
 <div id="HighSchool">
-  <div class="subTitle">
-    <h2>Lycée Pablo Neruda</h2>
-    <h3>Year 2017-2020 <br> Baccalauréat scientifique - Mention très bien</h3>
+  <div id="HighSchoolTopWhiteBlur"></div>
+  
+  <img id="HighSchoolImage" src="assets/images/HighSchool.jpg" alt="High School Image">
+    
+  <div id="HighSchoolText">
+    <div class="subTitle">
+      <h2>Lycée Pablo Neruda</h2>
+      <h3>Year 2017-2020 <br> Baccalauréat scientifique - Mention très bien</h3>
+    </div>
+
+    <div id="HighSchoolSliders">
+      <div class="HSContainer">
+        <div id="HSISN">
+          <div>
+            <img src="../assets/images/logo_ISN.png">
+            <h3 class="HSTitle">ISN</h3>
+          </div>
+          <div class="HSText" hidden>
+            <p>ISN text</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="HSContainer">
+        <div id="HSKart">
+          <div>
+            <img src="../assets/images/logo_kart.png">
+            <h3 class="HSTitle">Kart</h3>
+          </div>
+          <div class="HSText" hidden>
+            <p>Kart text</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="HSContainer">
+        <div id="HSMinecraft">
+          <div>
+            <img src="../assets/images/logo_minecraft.png">
+            <h3 class="HSTitle">Minecraft</h3>
+          </div>
+          <div class="HSText" hidden>
+            <p>Minecraft text</p>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-  <!-- Add the sliders -->
+  
+
+  <div id="HighSchoolBottomWhiteBlur"></div>
 </div>
 
 <div id="IUT">
@@ -68,43 +118,57 @@
   <!-- Add the sliders -->
 </div>
 
-<div id="WorkWithMe">
-  <div class="subTitle">
-    <h2>Work with me</h2>
-  </div>
-  <div id="WWMText">
-    <div id="WhatICanDo">
-      <div>
-        <h3>What I can do</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum lacinia efficitur condimentum. Duis aliquet rhoncus diam, eu tempor lacus ullamcorper at. Duis at luctus dui. Praesent ultrices blandit ante, ut dapibus sem aliquet a. Nam pharetra turpis velit, et bibendum sapien pellentesque et. Phasellus odio diam, consectetur quis tincidunt vel, porta nec arcu.</p>
-      </div>
-      <div id="WhatICanDoTechno">
-        <img src="../assets/images/logo_html.png">
-        <img src="../assets/images/logo_css.png">
-        <img src="../assets/images/logo_javascript.png">
-        <img src="../assets/images/logo_angular.png">
-        <img src="../assets/images/logo_php.png">
-        <img src="../assets/images/logo_react.png">
-        <img src="../assets/images/logo_c.png">
-        <img src="../assets/images/logo_django.png">
-        <img src="../assets/images/logo_python.png">
-        <img src="../assets/images/logo_postgresql.png">
-        <img src="../assets/images/logo_docker.png">
-        <img src="../assets/images/logo_aws.png">
-        <img src="../assets/images/logo_notion.png">
-        <img src="../assets/images/logo_kotlin.png">
-        <img src="../assets/images/logo_n8n.png">
-        <img src="../assets/images/logo_java.png">
-      </div>
+<div id="WorkWithMeBackground">
+  <div id="WorkWithMe">
+    <div class="subTitle">
+      <h2>Work with me</h2>
     </div>
-    <div id="ContactMe">
-      <h3>Contact me</h3>
-      <input type="text" placeholder="Name">
-      <input type="text" placeholder="Email">
-      <textarea placeholder="Message" class="FreeText"></textarea>
-      <button>Send</button>
+    <div id="WWMText">
+      <div id="WhatICanDo">
+        <div>
+          <h3>What I can do</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum lacinia efficitur condimentum. Duis aliquet rhoncus diam, eu tempor lacus ullamcorper at. Duis at luctus dui. Praesent ultrices blandit ante, ut dapibus sem aliquet a. Nam pharetra turpis velit, et bibendum sapien pellentesque et. Phasellus odio diam, consectetur quis tincidunt vel, porta nec arcu.</p>
+        </div>
+        <div id="WhatICanDoTechno">
+          <img src="../assets/images/logo_html.png">
+          <img src="../assets/images/logo_css.png">
+          <img src="../assets/images/logo_javascript.png">
+          <img src="../assets/images/logo_angular.png">
+          <img src="../assets/images/logo_php.png">
+          <img src="../assets/images/logo_react.png">
+          <img src="../assets/images/logo_c.png">
+          <img src="../assets/images/logo_django.png">
+          <img src="../assets/images/logo_python.png">
+          <img src="../assets/images/logo_postgresql.png">
+          <img src="../assets/images/logo_docker.png">
+          <img src="../assets/images/logo_aws.png">
+          <img src="../assets/images/logo_notion.png">
+          <img src="../assets/images/logo_kotlin.png">
+          <img src="../assets/images/logo_n8n.png">
+          <img src="../assets/images/logo_java.png">
+        </div>
+      </div>
+      <div id="ContactMe">
+        <h3>Contact me</h3>
+        <input type="text" placeholder="Name">
+        <input type="text" placeholder="Email">
+        <textarea placeholder="Message" class="FreeText"></textarea>
+        <button>Send</button>
+      </div>
     </div>
   </div>
 </div>
 
 <app-footer></app-footer>
+
+<div id="outerContainer">
+  <div class="select-left" id="container">
+    <div id="item"></div>
+    <div class="left">
+      <span>Periodiek</span>
+    </div>
+    <div class="right">
+      <span>Eenmalig</span>
+    </div>
+  </div>
+</div>
