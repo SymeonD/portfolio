@@ -224,19 +224,40 @@
     display: flex;
     flex-direction: row;
     width: 100%;
-    height: 100%;
+    height: fit-content;
 }
 
-#HSISN{
+#HSISN, #HSMinecraft, #HSKart{
     position: absolute;
     width: auto;
 }
 
-#HSKart{
+.HSContainer:has(> #HSKart){
     justify-content: end;
 }
 
 #HighSchoolSliders .HSTitle{
     margin: 0%;
     padding: 0%;
+}
+
+/* .HSContainer:has(> #HSISN) .HSText, .HSContainer:has(> #HSMinecraft) .HSText{
+    margin-left: -200px;
+    position: inherit;
+} */
+
+.HSContainer:has(> #HSKart) .HSText{
+    margin: 1%;
+    width: 50%;
+}
+
+.HSContainer > .HSText > p{
+    padding: 2%;
+    margin: 0%;
+    margin-right: 200px;
+    font-family: 'Roboto', sans-serif;
+}
+
+#HSISN.shown{
+    width: fit-content;
 }

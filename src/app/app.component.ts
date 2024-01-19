@@ -14,7 +14,6 @@ import { FooterComponent } from './footer/footer.component';
 })
 export class AppComponent {
   title = 'portfolio';
-  dragItem : HTMLElement | null;
   container : HTMLElement | null;
 
   active : boolean;
@@ -36,7 +35,6 @@ export class AppComponent {
     this.xOffset = 0;
     this.yOffset = 0;
 
-    this.dragItem = document.getElementById("HSISN");
     this.container = document.getElementById("HSContainer");
   }
 
@@ -53,157 +51,11 @@ export class AppComponent {
       resumerClickable?.classList.contains("expand") ? null : null;
     });
 
-    // this.container = document.getElementById("HSContainer");
-    // this.dragItem = document.getElementById("HSISN");
-    // this.container ? this.container.addEventListener("mousedown", (e) => {
-    //   dragElement(e, "dragStart", this);
-    // }, false) : null;
-    // this.dragItem ? this.dragItem.addEventListener("mousedown", (e) => {
-    //   dragElement(e, "itemDragStart", this);
-    // }, false) : null;
-    // this.container ? this.container.addEventListener("mousemove", (e) => {
-    //   dragElement(e, "drag", this);
-    // }, false) : null;
-    // this.container ? this.container.addEventListener("mouseup", (e) => {
-    //   dragElement(e, "dragEnd", this);
-    // }, false) : null;
-
     dragElement(document.getElementById("HSISN")!);
+    dragElement(document.getElementById("HSKart")!);
+    dragElement(document.getElementById("HSMinecraft")!);
   }
 }
-
-// function dragElement(elmnt: any, dragFunction: string, object: any) {
-  
-
-//   if(dragFunction === "dragStart") {
-//     dragStart(elmnt);
-//   }else if(dragFunction === "dragEnd") {
-//     dragEnd(elmnt);
-//   }else if(dragFunction === "drag") {
-//     drag(elmnt);
-//   }else if(dragFunction === "itemDragStart") {
-//     itemDragStart(elmnt);
-//   }
-
-//   function dragStart(e: any) {
-//     var elm = e.target;
-//     var xPos = e.pageX - elm.offsetLeft;
-    
-//     if (e.type === "touchstart") {
-//       var xPosMobile = e.touches[0].pageX - elm.offsetLeft;
-//       object.initialX = xPosMobile;
-//     } else {
-//       object.initialX = xPos; 
-//     }
-    
-//     object.dragItem ? object.dragItem.style.transition = "all .2s cubic-bezier(0.04, 0.46, 0.36, 0.99)" : null;
-
-//     if (e.target === object.dragItem) {
-//       object.active = true;
-//     }
-
-//     console.log(object.dragItem);
-//   }
-
-//   function itemDragStart(e: any) {
-//     var elm = e.target;
-//     var xPos = e.pageX - elm.offsetLeft;
-    
-//     object.itemClick = xPos;
-//   }
-
-
-//   function dragEnd(e: any) {
-//     let max = 400;
-
-//     object.initialX = object.currentX;
-
-//     object.active = false;
-      
-//     if (object.initialX > 100) {
-//       object.currentX = max;
-//       object.dragItem ? object.dragItem.style.transition = "all .2s cubic-bezier(0.04, 0.46, 0.36, 0.99)" : null;
-//       object.container ? object.container.classList.add('select-right') : null;
-//       object.container ? object.container.classList.remove('select-left') : null;
-//     } else {
-//       object.currentX = 0;
-//       object.dragItem ? object.dragItem.style.transition = "all .2s cubic-bezier(0.04, 0.46, 0.36, 0.99)" : null;
-//       object.container ? object.container.classList.remove('select-right') : null;
-//       object.container ? object.container.classList.add('select-left') : null;
-//     }
-    
-//     setTranslate(object.currentX, object.dragItem);
-//   }
-
-//   function drag(e: any) {
-//     let max = 400;
-
-//     let max_drag = 600;
-//     let min_drag = 400;
-
-//     var elm = e.target;
-//     var xPos = e.pageX - elm.offsetLeft;
-
-//     if (!(xPos > max_drag || xPos < min_drag)) {
-//       if (object.active) {
-//         e.preventDefault();
-
-//         if (e.type === "touchmove") {
-//           var xPosMobile = e.touches[0].pageX - elm.offsetLeft;
-//           object.currentX = xPosMobile - object.initialX; 
-//           if (object.initialX > max) {
-//             object.currentX = xPosMobile - object.itemClick;
-//           }
-//           if (object.currentX > max) {
-//             object.currentX = max;
-//             object.active = false;
-//             object.container ? object.container.classList.add('select-right') : null;
-//             object.container ? object.container.classList.remove('select-left') : null;
-//           } else if (object.currentX < min_drag) {
-//             object.currentX = min_drag;
-//             object.active = false;
-//             object.container ? object.container.classList.remove('select-right') : null;
-//             object.container ? object.container.classList.add('select-left') : null;
-//           }
-//         } else {
-//           object.currentX = xPos - object.initialX;
-//           if (object.initialX > max) {
-//             object.currentX = xPos - object.itemClick;
-//           }
-//           if (object.currentX > max) {
-//             object.currentX = max;
-//             object.active = false;
-//             object.container ? object.container.classList.add('select-right') : null;
-//             object.container ? object.container.classList.remove('select-left') : null;
-//           } else if (object.currentX < min_drag) {
-//             object.currentX = min_drag;
-//             object.active = false;
-//             object.container ? object.container.classList.remove('select-right') : null;
-//             object.container ? object.container.classList.add('select-left') : null;
-//           }
-//         }
-
-//         object.dragItem ? object.dragItem.style.transition = "all .05s cubic-bezier(0.04, 0.46, 0.36, 0.99)" : null;
-
-//         object.xOffset = object.currentX;
-
-//         setTranslate(object.currentX, object.dragItem);
-//       }
-//     } else {
-//       object.active = false;
-      
-//       if (object.initialX > max) {
-//         object.dragItem ? object.dragItem.style.transform = "translate3d("+max+"px, 0px, 0)" : null;
-//       } else {
-//         object.dragItem ? object.dragItem.style.transform = "translate3d(0, 0px, 0)" : null; 
-//       }
-//     }
-//   }
-
-//   function setTranslate(xPos: number, el: any) {
-//     el.style.transform = "translate3d(" + xPos + "px, 0px, 0)";
-//   }
-// }
 
 function dragElement(elmnt: HTMLElement) {
   var pos1 = 0, pos3 = 0;
@@ -236,7 +88,13 @@ function dragElement(elmnt: HTMLElement) {
     // Get the width of the container
     var containerWidth = containerRect.width;
     // Get the width of the element
-    var elmntWidth = elmnt.getBoundingClientRect().width;
+    // If the element has the text shown, substract the width of the text
+    if (elmnt.classList.contains("shown")) {
+      var text = elmnt.getElementsByClassName("HSText")[0] as HTMLElement;
+      var elmntWidth = elmnt.getBoundingClientRect().width - text.getBoundingClientRect().width;
+    }else{
+      var elmntWidth = elmnt.getBoundingClientRect().width;
+    }
 
     if(elmntNewPos < containerRect.left || elmntNewPos > containerRect.left + containerWidth - elmntWidth) {
       closeDragElement();
@@ -257,7 +115,12 @@ function dragElement(elmnt: HTMLElement) {
     // Get the width of the container
     var containerWidth = containerRect.width;
     // Get the width of the element
-    var elmntWidth = elmnt.getBoundingClientRect().width;
+    if (elmnt.classList.contains("shown")) {
+      var text = elmnt.getElementsByClassName("HSText")[0] as HTMLElement;
+      var elmntWidth = elmnt.getBoundingClientRect().width - text.getBoundingClientRect().width;
+    }else{
+      var elmntWidth = elmnt.getBoundingClientRect().width;
+    }
 
     // Passing point
     var passingPoint = containerRect.left + (containerWidth / 2) - (elmntWidth / 2);
@@ -266,9 +129,32 @@ function dragElement(elmnt: HTMLElement) {
     if (elmnt.offsetLeft > passingPoint) {
       elmnt.style.transition = "all .2s cubic-bezier(0.04, 0.46, 0.36, 0.99)";
       elmnt.style.left = containerRect.left + containerWidth - elmntWidth + "px";
+
+      // Toggle the classlist shown to the element
+      elmnt.classList.toggle("shown");
     } else {
       elmnt.style.transition = "all .2s cubic-bezier(0.04, 0.46, 0.36, 0.99)";
       elmnt.style.left = containerRect.left + "px";
+
+      // Toggle the classlist shown to the element
+      elmnt.classList.toggle("shown");
+    }
+
+    // After the new position is done, show the text if the element is shown
+    if (elmnt.classList.contains("shown")) {
+      
+      // Get the text element
+      var text = elmnt.getElementsByClassName("HSText")[0] as HTMLElement;
+
+      // Change the style of the text element to remove the hidden class
+      text.hidden = false;
+
+    }else{
+      // Get the text element
+      var text = elmnt.getElementsByClassName("HSText")[0] as HTMLElement;
+
+      // Change the style of the text element to remove the hidden class
+      text.hidden = true;
     }
   }
 }
