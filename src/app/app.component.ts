@@ -54,6 +54,25 @@ export class AppComponent {
     dragElement(document.getElementById("HSISN")!);
     dragElement(document.getElementById("HSKart")!);
     dragElement(document.getElementById("HSMinecraft")!);
+
+    // Get the IUT Containers
+    var IUTContainer = document.getElementsByClassName("IUTSlider") as HTMLCollectionOf<HTMLElement>;
+    // Get the IUT Text
+    var IUTText = document.getElementsByClassName("IUTText") as HTMLCollectionOf<HTMLElement>;
+    // Add an event listener to the IUT Containers when the mouse is over
+    // Change the opacity of the text to 1
+    for (let i = 0; i < IUTContainer.length; i++) {
+      IUTContainer[i].addEventListener("mouseover", function() {
+        IUTText[i].style.opacity = "1";
+        // Set font size to 1.5rem
+        IUTText[i].style.fontSize = "1em";
+      });
+      IUTContainer[i].addEventListener("mouseout", function() {
+        IUTText[i].style.opacity = "0";
+        // Set font size to 0rem
+        IUTText[i].style.fontSize = "0em";
+      });
+    }
   }
 }
 
@@ -78,6 +97,8 @@ function dragElement(elmnt: HTMLElement) {
     // calculate the new cursor position:
     pos1 = pos3 - e.clientX;
     pos3 = e.clientX;
+
+    // Get the 
 
     let elmntNewPos = elmnt.offsetLeft - pos1;
 
@@ -131,13 +152,13 @@ function dragElement(elmnt: HTMLElement) {
       elmnt.style.left = containerRect.left + containerWidth - elmntWidth + "px";
 
       // Toggle the classlist shown to the element
-      elmnt.classList.toggle("shown");
+      elmnt.classList.remove("shown");
     } else {
       elmnt.style.transition = "all .2s cubic-bezier(0.04, 0.46, 0.36, 0.99)";
       elmnt.style.left = containerRect.left + "px";
 
       // Toggle the classlist shown to the element
-      elmnt.classList.toggle("shown");
+      elmnt.classList.add("shown");
     }
 
     // After the new position is done, show the text if the element is shown
@@ -145,14 +166,12 @@ function dragElement(elmnt: HTMLElement) {
       
       // Get the text element
       var text = elmnt.getElementsByClassName("HSText")[0] as HTMLElement;
-
       // Change the style of the text element to remove the hidden class
       text.hidden = false;
 
     }else{
       // Get the text element
       var text = elmnt.getElementsByClassName("HSText")[0] as HTMLElement;
-
       // Change the style of the text element to remove the hidden class
       text.hidden = true;
     }
