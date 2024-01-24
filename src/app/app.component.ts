@@ -24,6 +24,7 @@ export class AppComponent {
   itemClick : HTMLElement | null;
   xOffset : number;
   yOffset : number;
+  typewriterWords: string[] | null;
 
   constructor() {
     this.active = false;
@@ -35,7 +36,44 @@ export class AppComponent {
     this.xOffset = 0;
     this.yOffset = 0;
 
+    this.typewriterWords = ["WEBSITE", "SERVER", "MOBILE APPLICATION", "DESKTOP APPLICATION", "GAME"];
+
     this.container = document.getElementById("HSContainer");
+  }
+
+  // TypeWriter
+  typeWriter(word: string, i: number, text: string) {
+    if (i < word.length) {
+      text += word.charAt(i);
+      document.getElementById("Typewriter")!.innerHTML = text;
+      i++;
+      setTimeout(() => this.typeWriter(word, i, text), 100);
+    }else{
+      setTimeout(() => this.typeWriterBack(word, i, text), 1000);
+    }
+  }
+
+  typeWriterBack(word: string, i: number, text: string) {
+    if (i > 0) {
+      text = text.slice(0, -1);
+      document.getElementById("Typewriter")!.innerHTML = text;
+      i--;
+      setTimeout(() => this.typeWriterBack(word, i, text), 50);
+    }else{
+      // Change the word
+      let index = this.typewriterWords!.indexOf(word);
+      index = (index + 1) % this.typewriterWords!.length;
+      word = this.typewriterWords![index];
+      setTimeout(() => this.typeWriter(word, i, text), 1000);
+    }
+  }
+
+  // Loop through the words
+  typeWriterLoop() {
+    let i = 0;
+    let text = "";
+    let word = this.typewriterWords![i];
+    this.typeWriter(word, 0, text);
   }
 
   ngOnInit(): void {
@@ -73,6 +111,9 @@ export class AppComponent {
         IUTText[i].style.fontSize = "0em";
       });
     }
+
+    // Use the typewriter
+    this.typeWriterLoop();
   }
 }
 

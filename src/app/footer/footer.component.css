@@ -6,6 +6,7 @@
     overflow-x: clip;
     overflow-y: clip;
     z-index: -1;
+    align-items: center;
 }
 
 #FooterWhiteBlur{
@@ -23,6 +24,7 @@
     color: white;
     margin-top: auto;
     margin-bottom: 1%;
+    width: 90%;
 }
 
 
@@ -47,6 +49,11 @@
     object-fit: cover;
     border-radius: 10px;
     margin: 0 5%;
+}
+
+#AdImage p{
+    margin: 0;
+    align-self: center;
 }
 
 #MiddleText{
