@@ -428,3 +428,28 @@
 #CountactLeftSlider{
     justify-content: flex-end;
 }
+
+/* SCU */
+
+#SCU{
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    margin: auto;
+    overflow-y: clip;
+    overflow-x: clip;
+}
+
+#SCUBody{
+    padding: 10%;
+}
+
+#SCUImage{
+    width: 50%;
+    height: 50%;
+    align-self: end;
+    padding: 10% 0;
+}
+
+
+
