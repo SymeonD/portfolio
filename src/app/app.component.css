@@ -418,6 +418,7 @@
     height: 70%;
     display: flex;
     align-items: center;
+    transition: all 0.5s ease-in-out;
 }
 
 #CountactSlider > div > img{
@@ -427,6 +428,14 @@
 
 #CountactLeftSlider{
     justify-content: flex-end;
+}
+
+#CountactLeftText, #CountactRightText{
+    margin: 0 5%;
+}
+
+.hidden{
+    opacity: 0%;
 }
 
 /* SCU */
