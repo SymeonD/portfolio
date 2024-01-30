@@ -138,6 +138,40 @@ export class AppComponent {
         countactTextRight.hidden = !countactTextRight.hidden;
       }
     });
+
+    // Projects elements
+    // Get the project elements
+    var projects_slider_items = document.getElementsByClassName("ProjectsSliderItem") as HTMLCollectionOf<HTMLElement>;
+
+    // Add a transform to each element, the first 0% on x, then 20% per element
+    for (let i = 0; i < projects_slider_items.length; i++) {
+      projects_slider_items[i].style.transform = "translateX(" + (i * 20) + "%)";
+    }
+
+    // Add an event listener to the projects slider item, using the dragProjectElement function
+    for (let i = 0; i < projects_slider_items.length; i++) {
+      projects_slider_items[i].addEventListener("mousedown", function() {
+        dragProjectElement(projects_slider_items[i]);
+      });
+    }
+  }
+}
+
+function dragProjectElement(elmnt: HTMLElement) {
+  console.log("Drag project element");
+  console.log(elmnt);
+  var pos1 = 0, pos3 = 0;
+  elmnt.onmousedown = dragMouseDown;
+
+  function dragMouseDown(e: any) {
+    e = e || window.event;
+    e.preventDefault();
+    // get the mouse cursor position at startup:
+    pos3 = e.clientX;
+    elmnt.style.transition = "none";
+    // document.onmouseup = closeDragElement;
+    // // call a function whenever the cursor moves:
+    // document.onmousemove = elementDrag;
   }
 }
 
