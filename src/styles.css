@@ -3,4 +3,7 @@ body{
     margin: 0px;
     max-width: 100%;
     height: auto;
+
+    /* Font */
+    font-family: 'Roboto', sans-serif;
 }

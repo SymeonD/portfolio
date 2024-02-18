@@ -265,6 +265,7 @@
 #HSISN, #HSMinecraft, #HSKart{
     position: absolute;
     width: auto;
+    cursor: move;
 }
 
 #HighSchoolSliders .HSTitle{
