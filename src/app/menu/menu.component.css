@@ -19,7 +19,7 @@ li{
 
 ul{
     padding: 0px;
-    color: black;
+    color: var(--primary-color);
     font-size: 1.3em;
     width: fit-content;
     margin: 0px 15px;
@@ -27,11 +27,11 @@ ul{
 
 a{
     text-decoration: none;
-    color: black;
+    color: var(--primary-color);
 }
 
-a:hover{
-    color: #f2f2f2;
+a ul:hover{
+    color: var(--quaternary-color);
 }
 
 img{

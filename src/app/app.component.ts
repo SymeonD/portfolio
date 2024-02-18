@@ -4,6 +4,8 @@ import { RouterOutlet } from '@angular/router';
 
 import { MenuComponent } from './menu/menu.component';
 import { FooterComponent } from './footer/footer.component';
+import { Fancybox } from "@fancyapps/ui";
+import "@fancyapps/ui/dist/fancybox/fancybox.css";
 
 @Component({
   selector: 'app-root',
@@ -80,6 +82,7 @@ export class AppComponent {
     let resumeSection = document.getElementById("Resume");
     let resumeImage = document.getElementById("ResumeImage");
     let resumerClickable = document.getElementById("ResumeClickable");
+    let resumelightbox = document.getElementById("ResumeLightbox");
     resumeSection?.addEventListener("click", function() {
       resumeImage?.classList.toggle("expand");
       resumeSection?.classList.toggle("expand");
@@ -87,6 +90,11 @@ export class AppComponent {
     });
     resumerClickable?.addEventListener("click", function() {
       resumerClickable?.classList.contains("expand") ? null : null;
+    });
+    resumelightbox?.addEventListener("click", function() {
+      Fancybox.bind("[data-fancybox]", {
+        // Your custom options
+      });
     });
 
     dragElement(document.getElementById("HSISN")!);

@@ -14,7 +14,7 @@ export class MenuComponent {
 
   ngOnInit(): void {
     // Get the links
-    const links = document.querySelectorAll('a');
+    const links = document.querySelectorAll('a.menu-item');
 
     // Add the click event
     links.forEach((link) => {

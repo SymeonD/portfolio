@@ -13,7 +13,7 @@
     width: 150%;
     height: 50%;
     transform: translateX(-10%) translateY(-40%);
-    background-color: white;
+    background-color: var(--quinary-color);
     filter: blur(30px);
     background-size: cover;
 }
@@ -21,7 +21,7 @@
 #FooterText{
     display: flex;
     justify-content: space-between;
-    color: white;
+    color: var(--quinary-color);
     margin-top: auto;
     margin-bottom: 1%;
     width: 90%;

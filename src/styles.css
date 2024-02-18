@@ -6,4 +6,17 @@ body{
 
     /* Font */
     font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--primary-color);
+}
+
+/* Define variables for colors */
+:root{
+    --primary-color: #132744;
+    --secondary-color: #F57B59;
+    --tertiary-color: #EE9676;
+    --quaternary-color: #FCBBA3;
+    --quinary-color: #FEFEFE;
 }
