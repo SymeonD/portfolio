@@ -51,6 +51,8 @@
     flex-direction: row;
     filter: drop-shadow(0px 4px 4px rgba(0,0,0,0.5));
     cursor: pointer;
+    position: relative;
+    z-index: 3;
 }
 
 #ResumeText{
@@ -155,6 +157,16 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
+
+    /* Shadow */
+    filter: drop-shadow(0px 4px 4px rgba(0,0,0,0.5));
+
+    /* Parallax */
+    /* overflow-x: hidden;
+    overflow-y: auto;
+    perspective: 300px;
+    position: relative;
+    transform-style: preserve-3d; */
 }
 
 #TransitionImages img{
@@ -165,12 +177,24 @@
 
 #TransitionImages > #TI1{
     transform: translateX(40%) translateY(-60%);
+    z-index: 2;
+    width: 314px;
+    /* Parallax */
+}
+
+#TransitionImages > #TI2{
+    z-index: 1;
+    width: 314px;
+    /* Parallax */
 }
 
 #TransitionImages > #TI3{
     max-width: 30%;
     max-height: 30%;
     transform: translateX(-40%) translateY(50%);
+    z-index: 2;
+    width: 235px;
+    /* Parallax */
 }
 
 /* High School */
