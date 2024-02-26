@@ -1,6 +1,13 @@
+#TransitionContainer{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
 #Transition{
     height: 70vh;
     width: 100%;
+    max-width: var(--body-max-width);
     display: flex;
     align-items: center;
 }
