@@ -1,5 +1,6 @@
 #Resume{
     width: 70%;
+    max-width: 1000px;
     background-color: var(--quinary-color);
     border-radius: 15px;
     transform: translateY(-25px);
