@@ -1,5 +1,12 @@
+#WorkWithMeBackground{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
 #WorkWithMe{
     width: 80%;
+    max-width: var(--body-max-width);
     display: flex;
     flex-direction: column;
     margin: auto;
