@@ -1,5 +1,12 @@
+#IUTContainer{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
 #IUT{
-    width: 95%;
+    width: 100%;
+    max-width: var(--body-max-width);
     height: 70vh;
     display: flex;
     margin: auto;
