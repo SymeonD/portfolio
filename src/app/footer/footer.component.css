@@ -30,6 +30,7 @@
     margin-top: auto;
     margin-bottom: 1%;
     width: 90%;
+    max-width: var(--body-max-width);
 }
 
 
