@@ -1,5 +1,12 @@
+#SCUContainer{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
 #SCU{
     width: 100%;
+    max-width: var(--body-max-width);
     height: 70vh;
     display: flex;
     margin: auto;
