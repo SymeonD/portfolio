@@ -1,0 +1,118 @@
+#HighSchool{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    overflow-y: clip;
+    overflow-x: clip;
+
+    background-image: url("../../assets/images/Low-Opacity/HighSchool-low.png");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+#HighSchoolImage{
+    object-fit: cover;
+    opacity: 0.2;
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+}
+
+#HighSchoolTopWhiteBlur{
+    width: 150%;
+    height: 50%;
+    background-color: var(--quinary-color);
+    filter: blur(25px);
+    background-size: cover;
+    transform: translateX(-10%) translateY(-50%);
+}
+
+#HighSchoolBottomWhiteBlur{
+    width: 150%;
+    height: 50%;
+    background-color: var(--quinary-color);
+    filter: blur(25px);
+    background-size: cover;
+    transform: translateX(-10%) translateY(50%);
+}
+
+#HighSchoolText{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-right: 5%;
+    align-content: center;
+    height: 100%;
+    width: 80%;
+    align-self: center;
+}
+
+#HighSchool .subTitle{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-content: center;
+
+    height: 100%;
+    margin-top: 10%;
+    margin-right: 5%;
+}
+
+#HighSchoolSliders{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 84vh;
+    width: 100%;
+}
+
+.HSContainer{
+    height: 28vh;
+    width: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+}
+
+/* Last HSContainer */
+.HSContainer:last-child{
+    height: 18vh;
+}
+
+.HSContainer > div{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: fit-content;
+}
+
+#HSISN, #HSMinecraft, #HSKart{
+    position: absolute;
+    width: auto;
+    cursor: move;
+}
+
+#HighSchoolSliders .HSTitle{
+    margin: 0%;
+    padding: 0%;
+}
+
+.HSContainer .HSText{
+    padding: 1%;
+    width: 50%;
+}
+
+.HSContainer > .HSText > p{
+    padding: 2%;
+    margin: 0%;
+    margin-right: 200px;
+    font-family: 'Roboto', sans-serif;
+}
+
+#HSISN.shown{
+    width: fit-content;
+}

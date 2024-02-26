@@ -1,0 +1,95 @@
+#Projects{
+    width: 100%;
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    overflow-y: clip;
+    overflow-x: clip;
+    align-items: center;
+
+    background-image: url("../../assets/images/Low-Opacity/PersonnalProjects-low.png");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+#Projects .subTitle{
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    margin: 5% 10%;
+    overflow-y: clip;
+    overflow-x: clip;
+}
+
+#ProjectsTopWhiteBlur{
+    width: 150%;
+    height: 50%;
+    background-color: var(--quinary-color);
+    filter: blur(25px);
+    background-size: cover;
+    transform: translateX(-10%) translateY(-50%);
+}
+
+#ProjectsImage{
+    object-fit: cover;
+    opacity: 0.2;
+    position: absolute;
+    width: 100%;
+    height: 60vh;
+    z-index: -1;
+}
+
+#ProjectsBottomWhiteBlur{
+    width: 150%;
+    height: 50%;
+    background-color: var(--quinary-color);
+    filter: blur(25px);
+    background-size: cover;
+    transform: translateX(-10%) translateY(50%);
+}
+
+#ProjectsBody{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.SliderItemImage{
+    width: 15%;
+    display: flex;
+    flex-direction: column;
+}
+
+.SliderItemImage > img{
+    width: 100%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    object-position: top;
+    border-radius: 20%;
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
+}
+
+.SliderImageTitle{
+    font-size: 1em;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    width: fit-content;
+    padding: 5px 10px;
+    border-radius: 40px;
+    background-color: rgb(135, 184, 140);
+    align-self: flex-end;
+    transform: translateY(-50%);
+}
+
+.SliderItemTitle{
+    font-size: 1em;
+    font-family: 'Roboto', sans-serif;
+    transform: translateY(-75%);
+}
+
+.ProjectsSlider{
+    padding: 5%;
+}
