@@ -14,6 +14,10 @@ body{
     display: flex;
 }
 
+app-root{
+    width: 100%;
+}
+
 /* Define variables for colors */
 :root{
     --primary-color: #132744;
@@ -21,5 +25,5 @@ body{
     --tertiary-color: #EE9676;
     --quaternary-color: #FCBBA3;
     --quinary-color: #FEFEFE;
-    --body-max-width: 100%;
+    --body-max-width: 1500px;
 }

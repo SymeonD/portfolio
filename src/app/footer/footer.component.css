@@ -7,6 +7,11 @@
     overflow-y: clip;
     z-index: -1;
     align-items: center;
+
+    background-image: url("../../assets/images/Low-Opacity/Footer.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 #FooterWhiteBlur{
@@ -25,6 +30,7 @@
     margin-top: auto;
     margin-bottom: 1%;
     width: 90%;
+    max-width: var(--body-max-width);
 }
 
 

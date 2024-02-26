@@ -1,3 +1,9 @@
+#Menu-container{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
 #Menu{
     position: fixed;
     top: 0;

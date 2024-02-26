@@ -1,0 +1,48 @@
+#Hero{
+    width: 100%;
+    height: 100vh;
+    overflow-y: clip;
+    overflow-x: clip;
+
+    background-image: url("../../assets/images/Low-Opacity/Hero.png");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+
+    display: flex;
+    justify-content: center;
+}
+
+#HeroImage{
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    opacity: 0.8;
+    position: absolute;
+}
+
+#HeroTextContainer{
+    width: 100%;
+    max-width: var(--body-max-width);
+    margin-top: 250px;
+}
+
+#HeroText{
+    margin: 0px 100px;
+    font-size: 2em;
+    text-align: left;
+    font-family: 'Roboto', sans-serif;
+}
+
+#Typewriter{
+    color: var(--quaternary-color);
+}
+
+#HeroWhiteBlur{
+    width: 150%;
+    height: 50%;
+    transform: translateX(-10%) translateY(185%);
+    background-color: var(--quinary-color);
+    filter: blur(30px);
+    background-size: cover;
+}

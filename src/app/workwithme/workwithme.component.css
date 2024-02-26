@@ -1,0 +1,60 @@
+#WorkWithMeBackground{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#WorkWithMe{
+    width: 80%;
+    max-width: var(--body-max-width);
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    margin-top: 10%;
+}
+
+#WorkWithMe .subTitle{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+#WWMText{
+    display: flex;
+    flex-direction: row;
+    flex-flow: row;
+}
+
+#WhatICanDo, #ContactMe{
+    width: 50%;
+    padding: 5%;
+}
+
+#WhatICanDoTechno img{
+    max-width: 10%;
+    max-height: 10%;
+    padding: 0 1%;
+}
+
+#ContactMe{
+    display: flex;
+    flex-direction: column;
+}
+
+#ContactMe input, #ContactMe textarea{
+    max-width: 100%;
+    border-radius: 5px;
+    border-color: rgba(0,0,0,0.3);
+    margin: 3% 0;
+    padding: 1%;
+}
+
+#ContactMe .FreeText{
+    padding: 1% 1% 10% 1%;
+}
+
+#ContactMe button{
+    background-color: rgba(0,0,0,0);
+    border: none;
+    align-self: end;
+}

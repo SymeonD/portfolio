@@ -1,0 +1,26 @@
+#SCUContainer{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#SCU{
+    width: 100%;
+    max-width: var(--body-max-width);
+    height: 70vh;
+    display: flex;
+    margin: auto;
+    overflow-y: clip;
+    overflow-x: clip;
+}
+
+#SCUBody{
+    padding: 10%;
+}
+
+#SCUImage{
+    width: 50%;
+    height: 50%;
+    align-self: end;
+    padding: 10% 0;
+}
