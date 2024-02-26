@@ -44,10 +44,10 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
-    margin-right: 5%;
     align-content: center;
     height: 100%;
     width: 80%;
+    max-width: var(--body-max-width);
     align-self: center;
 }
 
