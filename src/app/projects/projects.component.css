@@ -52,6 +52,7 @@
 
 #ProjectsBody{
     width: 100%;
+    max-width: var(--body-max-width);
     height: 100%;
     display: flex;
     justify-content: center;
