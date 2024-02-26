@@ -7,8 +7,9 @@
     overflow-y: clip;
     overflow-x: clip;
 
-    background-image: url("../assets/images/hero.jpg");
+    background-image: url("../assets/images/Low-Opacity/Hero.png");
     background-size: cover;
+    background-position: center;
     background-attachment: fixed;
 }
 
@@ -211,6 +212,11 @@
     margin: auto;
     overflow-y: clip;
     overflow-x: clip;
+
+    background-image: url("../assets/images/Low-Opacity/HighSchool-low.png");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
 }
 
 #HighSchoolImage{
@@ -412,6 +418,12 @@
     overflow-y: clip;
     overflow-x: clip;
     align-items: center;
+
+    background-image: url("../assets/images/Low-Opacity/countact-low.png");
+    background-size: cover;
+    background-position-x: center;
+    background-position-y:bottom;
+    background-attachment: fixed;
 }
 
 #Countact .subTitle{
@@ -529,6 +541,11 @@
     overflow-y: clip;
     overflow-x: clip;
     align-items: center;
+
+    background-image: url("../assets/images/Low-Opacity/PersonnalProjects-low.png");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
 }
 
 #Projects .subTitle{
