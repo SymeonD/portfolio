@@ -9,9 +9,10 @@
     align-items: center;
 
     background-image: url("../../assets/images/Low-Opacity/Footer.png");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
+    background-size:contain;
+    background-position-x: center;
+    background-position-y: bottom;
+    background-attachment: fixed;
 }
 
 #FooterWhiteBlur{
