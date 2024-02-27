@@ -1,50 +1,64 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
+
 @Component({
   selector: 'app-workwithme',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, ReactiveFormsModule, MatFormFieldModule, MatInputModule, MatButtonModule],
   templateUrl: './workwithme.component.html',
   styleUrl: './workwithme.component.css'
 })
 export class WorkwithmeComponent {
 
-  ngOnInit():void {
-    
-    // Get the form
-    var form = document.getElementById("ContactMe") as HTMLFormElement;
-    // Get the button that sends the form
-    var submit = form?.querySelector("button[type=submit]");
+  contactSent: boolean = false;
 
-    // When the user clicks on the button, prevent the form from submitting
-    submit?.addEventListener("click", function(event) {
-      // Prevent the reload of the page
-      event.preventDefault();
+  name: FormControl = new FormControl('', [Validators.required, Validators.minLength(3)]);
+  email: FormControl = new FormControl('', [Validators.required, Validators.email]);
+  message: FormControl = new FormControl('', [Validators.required, Validators.minLength(10)]);
+  contactFormgroup: FormGroup = new FormGroup({
+    name: this.name,
+    email: this.email,
+    message: this.message
+  });
 
-      // Get the form data
-      var name = form?.querySelector("input[name=name]") as HTMLInputElement;
-      var email = form?.querySelector("input[name=email]") as HTMLInputElement;
-      var message = form?.querySelector("textarea[name=message]") as HTMLTextAreaElement;
-
-      // Send the form data to the server
-      var data = {
-        subject: name.value + " | " + email.value,
-        body: message.value
-      };
-      fetch("https://in2a2x7jheihmujw63hejswsiq0gshhg.lambda-url.us-east-1.on.aws/", {
-        method: "POST",
-        body: JSON.stringify(data),
-        headers: {
-          "Content-Type": "application/json"
-        }
-      })
-      .then(function(response) {
-        console.log(response);
-      })
-      .catch(function(error) {
-        console.error(error);
-      });
+  sendContact(){
+    if(this.contactFormgroup.invalid){
+      return;
+    }
+    // Send the form data to the server
+    var data = {
+      subject: this.name.value + " | " + this.email.value,
+      body: this.message.value
+    };
+    fetch("https://in2a2x7jheihmujw63hejswsiq0gshhg.lambda-url.us-east-1.on.aws/", {
+      method: "POST",
+      body: JSON.stringify(data),
+      headers: {
+        "Content-Type": "application/json"
+      }
+    })
+    .then((response) => {
+      if(response.ok){
+        this.contactSent = true;
+      }
+      else{
+        console.error(response);
+        this.contactSent = false;
+      }
+    })
+    .catch((error) => {
+      console.error(error);
+      this.contactSent = false;
+    })
+    .finally(() => {
+      // Reset the form
+      this.contactFormgroup.reset();
+      this.contactFormgroup.markAsPristine();
     });
   }
 
