@@ -27,5 +27,3 @@ app-root{
     --quinary-color: #FEFEFE;
     --body-max-width: 1500px;
 }
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
