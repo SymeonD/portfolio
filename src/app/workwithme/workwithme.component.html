@@ -28,13 +28,34 @@
             <img src="../assets/images/logos/logo_java.png">
           </div>
         </div>
-        <div id="ContactMe">
+        <form id="ContactMe" [formGroup]="contactFormgroup">
           <h3>Contact me</h3>
-          <input type="text" placeholder="Name">
-          <input type="text" placeholder="Email">
-          <textarea placeholder="Message" class="FreeText"></textarea>
-          <button>Send</button>
-        </div>
+          <mat-form-field appearance="outline" class="example-full-width">
+            <mat-label>Name</mat-label>
+            <input matInput formControlName="name" required>
+            <mat-error *ngIf="contactFormgroup.get('name')?.hasError">
+              Please enter a name of at least 3 characters
+            </mat-error>
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>Email</mat-label>
+            <input matInput formControlName="email" required>
+            <mat-error *ngIf="contactFormgroup.get('email')?.hasError">
+              Please enter a valid email address
+            </mat-error>
+          </mat-form-field>
+          <mat-form-field appearance="outline" class="example-full-width">
+            <mat-label>Message</mat-label>
+            <textarea matInput formControlName="message" class="FreeText" required></textarea>
+            <mat-error *ngIf="contactFormgroup.get('message')?.hasError">
+              Please enter a message of at least 10 characters
+            </mat-error>
+          </mat-form-field>
+          <div id="BottomForm">
+            <button mat-flat-button color="primary" (click)="sendContact()">Send</button>
+            <mat-label *ngIf="contactSent">Thank you for your message, I will be contacting you soon !</mat-label>
+          </div>
+        </form>
       </div>
     </div>
   </div>
