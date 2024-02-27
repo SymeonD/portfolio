@@ -32,21 +32,21 @@
           <h3>Contact me</h3>
           <mat-form-field appearance="outline" class="example-full-width">
             <mat-label>Name</mat-label>
-            <input matInput [formControl]="name" required>
+            <input matInput formControlName="name" required>
             <mat-error *ngIf="contactFormgroup.get('name')?.hasError">
               Please enter a name of at least 3 characters
             </mat-error>
           </mat-form-field>
           <mat-form-field appearance="outline">
             <mat-label>Email</mat-label>
-            <input matInput [formControl]="email" required>
+            <input matInput formControlName="email" required>
             <mat-error *ngIf="contactFormgroup.get('email')?.hasError">
               Please enter a valid email address
             </mat-error>
           </mat-form-field>
           <mat-form-field appearance="outline" class="example-full-width">
             <mat-label>Message</mat-label>
-            <textarea matInput [formControl]="message" class="FreeText" required></textarea>
+            <textarea matInput formControlName="message" class="FreeText" required></textarea>
             <mat-error *ngIf="contactFormgroup.get('message')?.hasError">
               Please enter a message of at least 10 characters
             </mat-error>

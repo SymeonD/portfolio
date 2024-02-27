@@ -1,7 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, FormGroupDirective, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
@@ -15,16 +15,17 @@ import { MatButtonModule } from '@angular/material/button';
 })
 export class WorkwithmeComponent {
 
-  contactSent: boolean = false;
+  contactFormgroup: FormGroup;
+  contactSent: boolean;
 
-  name: FormControl = new FormControl('', [Validators.required, Validators.minLength(3)]);
-  email: FormControl = new FormControl('', [Validators.required, Validators.email]);
-  message: FormControl = new FormControl('', [Validators.required, Validators.minLength(10)]);
-  contactFormgroup: FormGroup = new FormGroup({
-    name: this.name,
-    email: this.email,
-    message: this.message
-  });
+  constructor(private formBuilder: FormBuilder) { 
+    this.contactFormgroup = this.formBuilder.group({
+      name: new FormControl('', [Validators.required, Validators.minLength(3)]),
+      email: new FormControl('', [Validators.required, Validators.email]),
+      message: new FormControl('', [Validators.required, Validators.minLength(10)])
+    });
+    this.contactSent = false;
+  }
 
   sendContact(){
     if(this.contactFormgroup.invalid){
@@ -32,8 +33,8 @@ export class WorkwithmeComponent {
     }
     // Send the form data to the server
     var data = {
-      subject: this.name.value + " | " + this.email.value,
-      body: this.message.value
+      subject: this.contactFormgroup.get("name")?.value + " | " + this.contactFormgroup.get("email")?.value,
+      body: this.contactFormgroup.get("message")?.value
     };
     fetch("https://in2a2x7jheihmujw63hejswsiq0gshhg.lambda-url.us-east-1.on.aws/", {
       method: "POST",
@@ -58,7 +59,9 @@ export class WorkwithmeComponent {
     .finally(() => {
       // Reset the form
       this.contactFormgroup.reset();
-      this.contactFormgroup.markAsPristine();
+      for (let name in this.contactFormgroup.controls) {
+        this.contactFormgroup.controls[name].setErrors(null);
+      }
     });
   }
 
