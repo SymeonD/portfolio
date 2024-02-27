@@ -83,5 +83,11 @@
     height: 50px;
     margin: 0 5%;
     align-self: center;
+    transition: all 0.3s ease-in-out;
+}
+
+#Socials img:hover{
+    cursor: pointer;
+    transform: scale(1.1);
 }
 
