@@ -82,11 +82,11 @@
     max-width: 100%;
     height: 100%;
     cursor: pointer;
+    z-index: 2;
 }
 
 #CountactRightSliderImage, #CountactLeftSliderImage{
     position: relative;
-    z-index: 2;
 }
 
 #CountactRightSliderImage.shown{
@@ -104,32 +104,21 @@
 
 #CountactLeftSliderText, #CountactRightSliderText{
     position: absolute;
-    max-width: 25%;
+    width: 350px;
     z-index: 1;
+
+    transition: opacity 0.5s cubic-bezier(0.42, 0, 0.13, 0.98);
 }
 
 #CountactLeftSliderText.hiding, #CountactRightSliderText.hiding{
-    /* display: none !important; */
     opacity: 0%;
 }
 
-#CountactRightSliderText.hiding{
-    /* display: none !important; */
-    transform: translateX(-100%);
-}
-
-#CountactLeftSliderText.hiding{
-    /* display: none !important; */
-    transform: translateX(100%);
-}
-
 #CountactLeftSliderText{
-    right: 50%;
-    opacity: 100%;
+    left: 110%;
 }
 
 #CountactRightSliderText{
-    left: 50%;
+    right: 110%;
     text-align: end;
-    transform: translateX(0);
 }
