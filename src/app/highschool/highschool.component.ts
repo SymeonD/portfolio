@@ -36,25 +36,6 @@ export class HighschoolComponent {
   }
 }
 
-
-function dragProjectElement(elmnt: HTMLElement) {
-  console.log("Drag project element");
-  console.log(elmnt);
-  var pos1 = 0, pos3 = 0;
-  elmnt.onmousedown = dragMouseDown;
-
-  function dragMouseDown(e: any) {
-    e = e || window.event;
-    e.preventDefault();
-    // get the mouse cursor position at startup:
-    pos3 = e.clientX;
-    elmnt.style.transition = "none";
-    // document.onmouseup = closeDragElement;
-    // // call a function whenever the cursor moves:
-    // document.onmousemove = elementDrag;
-  }
-}
-
 function dragElement(elmnt: HTMLElement) {
   var pos1 = 0, pos3 = 0;
   elmnt.onmousedown = dragMouseDown;
@@ -88,15 +69,9 @@ function dragElement(elmnt: HTMLElement) {
     // Get the width of the container
     var containerWidth = containerRect.width;
     // Get the width of the element
-    // If the element has the text shown, substract the width of the text
-    if (elmnt.classList.contains("shown")) {
-      var text = elmnt.getElementsByClassName("HSText")[0] as HTMLElement;
-      var elmntWidth = elmnt.getBoundingClientRect().width - text.getBoundingClientRect().width;
-    }else{
-      var elmntWidth = elmnt.getBoundingClientRect().width;
-    }
+    var elmntWidth = elmnt.children[0].getBoundingClientRect().width;
 
-    if(elmntNewPos < containerRect.left || elmntNewPos > containerRect.left + containerWidth - elmntWidth) {
+    if(elmntNewPos < containerRect.left || elmntNewPos > (containerRect.left+containerWidth-elmntWidth)) {
       closeDragElement();
     }else{
       elmnt.style.left = (elmntNewPos) + "px";
@@ -115,12 +90,7 @@ function dragElement(elmnt: HTMLElement) {
     // Get the width of the container
     var containerWidth = containerRect.width;
     // Get the width of the element
-    if (elmnt.classList.contains("shown")) {
-      var text = elmnt.getElementsByClassName("HSText")[0] as HTMLElement;
-      var elmntWidth = elmnt.getBoundingClientRect().width - text.getBoundingClientRect().width;
-    }else{
-      var elmntWidth = elmnt.getBoundingClientRect().width;
-    }
+    var elmntWidth = elmnt.children[0].getBoundingClientRect().width;
 
     // Passing point
     var passingPoint = containerRect.left + (containerWidth / 2) - (elmntWidth / 2);
