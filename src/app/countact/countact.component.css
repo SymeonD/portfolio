@@ -84,28 +84,52 @@
     cursor: pointer;
 }
 
-#CountactLeftSlider:has(div.hiding){
-    justify-content: flex-end;
-
-    transform: translateX(60%);
+#CountactRightSliderImage, #CountactLeftSliderImage{
+    position: relative;
+    z-index: 2;
 }
 
-#CountactRightSlider:has(div.hiding){
-    justify-content: flex-start;
-
-    transform: translateX(-60%);
+#CountactRightSliderImage.shown{
+    transform: translateX(350px);
 }
 
-#CountactRightSlider #CountactLeftSlider{
-    transform: translateX(0%);
+#CountactLeftSliderImage.shown{
+    transform: translateX(-350px);
 }
 
-#CountactLeftText, #CountactRightText{
-    margin: 0 5%;
-    max-width: 50%;
-    transition: all 0.5s ease-in-out;
+#CountactLeftSliderImage.hiding, #CountactRightSliderImage.hiding{
+    transform: translateX(0);
+    opacity: 0;
 }
 
-.hiding{
+#CountactLeftSliderText, #CountactRightSliderText{
+    position: absolute;
+    max-width: 25%;
+    z-index: 1;
+}
+
+#CountactLeftSliderText.hiding, #CountactRightSliderText.hiding{
+    /* display: none !important; */
     opacity: 0%;
+}
+
+#CountactRightSliderText.hiding{
+    /* display: none !important; */
+    transform: translateX(-100%);
+}
+
+#CountactLeftSliderText.hiding{
+    /* display: none !important; */
+    transform: translateX(100%);
+}
+
+#CountactLeftSliderText{
+    right: 50%;
+    opacity: 100%;
+}
+
+#CountactRightSliderText{
+    left: 50%;
+    text-align: end;
+    transform: translateX(0);
 }
