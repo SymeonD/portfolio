@@ -21,17 +21,17 @@ export class CountactComponent {
   
     // Add event listeners to clicks
     countactLogoLeft.addEventListener("click", function() {
-      if (!countactLogoLeft.classList.contains("hidden")) {
+      if (!countactLogoLeft.classList.contains("hiding")) {
         countactLogoLeft.classList.toggle("shown");
-        countactTextLeft.hidden = !countactTextLeft.hidden;
-        countactLogoRight.classList.toggle("hidden");
+        countactTextLeft.classList.toggle("hiding");
+        countactLogoRight.classList.toggle("hiding");
       }
     });
     countactLogoRight.addEventListener("click", function() {
-      if (!countactLogoRight.classList.contains("hidden")) {
-        countactLogoLeft.classList.toggle("hidden");
+      if (!countactLogoRight.classList.contains("hiding")) {
+        countactLogoLeft.classList.toggle("hiding");
         countactLogoRight.classList.toggle("shown");
-        countactTextRight.hidden = !countactTextRight.hidden;
+        countactTextRight.classList.toggle("hiding");
       }
     });
   }
