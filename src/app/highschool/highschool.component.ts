@@ -14,25 +14,6 @@ export class HighschoolComponent {
     dragElement(document.getElementById("HSISN")!);
     dragElement(document.getElementById("HSKart")!);
     dragElement(document.getElementById("HSMinecraft")!);
-
-    // Get the IUT Containers
-    var IUTContainer = document.getElementsByClassName("IUTSlider") as HTMLCollectionOf<HTMLElement>;
-    // Get the IUT Text
-    var IUTText = document.getElementsByClassName("IUTText") as HTMLCollectionOf<HTMLElement>;
-    // Add an event listener to the IUT Containers when the mouse is over
-    // Change the opacity of the text to 1
-    for (let i = 0; i < IUTContainer.length; i++) {
-      IUTContainer[i].addEventListener("mouseover", function() {
-        IUTText[i].style.opacity = "1";
-        // Set font size to 1.5rem
-        IUTText[i].style.fontSize = "1em";
-      });
-      IUTContainer[i].addEventListener("mouseout", function() {
-        IUTText[i].style.opacity = "0";
-        // Set font size to 0rem
-        IUTText[i].style.fontSize = "0em";
-      });
-    }
   }
 }
 
@@ -58,8 +39,6 @@ function dragElement(elmnt: HTMLElement) {
     pos1 = pos3 - e.clientX;
     pos3 = e.clientX;
 
-    // Get the 
-
     let elmntNewPos = elmnt.offsetLeft - pos1;
 
     // Get the container element
@@ -76,6 +55,27 @@ function dragElement(elmnt: HTMLElement) {
     }else{
       elmnt.style.left = (elmntNewPos) + "px";
     }
+
+    // Change the style of the text element to remove the hidden class
+    if (elmntNewPos > containerRect.left + (containerWidth / 2) - (elmntWidth / 2)) {
+      // Get the text element
+      var text = elmnt.getElementsByClassName("HSText")[0] as HTMLElement;
+      // Change the style of the text element to remove the hidden class
+      text.hidden = true;
+    } else {
+      // Get the text element
+      var text = elmnt.getElementsByClassName("HSText")[0] as HTMLElement;
+      // Change the style of the text element to remove the hidden class
+      text.hidden = false;
+    }
+
+    // Change the opacity of the text depending on the position of the element
+    // When the element is at the left side of the container, the opacity is 1
+    // When the element is at the middle of the container, the opacity is 0
+    // When the element is at the right side of the container, the opacity is 0
+    var opacity = Math.abs((elmntNewPos - (containerRect.left + (containerWidth / 2) - (elmntWidth / 2))) / (containerWidth / 2 - elmntWidth / 2));
+    var text = elmnt.getElementsByClassName("HSText")[0] as HTMLElement;
+    text.style.opacity = opacity.toString();
   }
 
   function closeDragElement() {
@@ -108,21 +108,11 @@ function dragElement(elmnt: HTMLElement) {
 
       // Toggle the classlist shown to the element
       elmnt.classList.add("shown");
-    }
 
-    // After the new position is done, show the text if the element is shown
-    if (elmnt.classList.contains("shown")) {
-      
       // Get the text element
       var text = elmnt.getElementsByClassName("HSText")[0] as HTMLElement;
-      // Change the style of the text element to remove the hidden class
-      text.hidden = false;
-
-    }else{
-      // Get the text element
-      var text = elmnt.getElementsByClassName("HSText")[0] as HTMLElement;
-      // Change the style of the text element to remove the hidden class
-      text.hidden = true;
+      // Set the opacity of the text element to 1
+      text.style.opacity = "1";
     }
   }
 }

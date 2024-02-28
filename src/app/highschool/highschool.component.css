@@ -59,6 +59,8 @@
     justify-content: center;
     height: 84vh;
     width: 100%;
+
+    position: relative;
 }
 
 .HSContainer{
@@ -68,7 +70,7 @@
     flex-direction: row;
     justify-content: end;
 
-    overflow-x: clip;
+    overflow-x: hidden;
 }
 
 /* Last HSContainer */
@@ -97,9 +99,8 @@
 .HSContainer .HSText{
     padding: 1%;
 
-    position: absolute;
-    left: 110%;
-    width: 500px;
+    /* position: absolute; */
+    width: 50%;
 }
 
 .HSContainer > .HSText > p{
