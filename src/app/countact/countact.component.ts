@@ -12,26 +12,26 @@ export class CountactComponent {
 
   ngOnInit(): void {
     // Get both parts of the countact logo
-    var countactLogoLeft = document.getElementById("CountactLeftSlider") as HTMLElement;
-    var countactLogoRight = document.getElementById("CountactRightSlider") as HTMLElement;
+    var countactLogoLeft = document.getElementById("CountactLeftSliderImage") as HTMLElement;
+    var countactLogoRight = document.getElementById("CountactRightSliderImage") as HTMLElement;
 
     // Get both texts of the countact logo
-    var countactTextLeft = document.getElementById("CountactLeftText") as HTMLElement;
-    var countactTextRight = document.getElementById("CountactRightText") as HTMLElement;
+    var countactTextLeft = document.getElementById("CountactLeftSliderText") as HTMLElement;
+    var countactTextRight = document.getElementById("CountactRightSliderText") as HTMLElement;
   
     // Add event listeners to clicks
     countactLogoLeft.addEventListener("click", function() {
-      if (!countactLogoLeft.classList.contains("hidden")) {
+      if (!countactLogoLeft.classList.contains("hiding")) {
         countactLogoLeft.classList.toggle("shown");
-        countactTextLeft.hidden = !countactTextLeft.hidden;
-        countactLogoRight.classList.toggle("hidden");
+        countactTextLeft.classList.toggle("hiding");
+        countactLogoRight.classList.toggle("hiding");
       }
     });
     countactLogoRight.addEventListener("click", function() {
-      if (!countactLogoRight.classList.contains("hidden")) {
-        countactLogoLeft.classList.toggle("hidden");
+      if (!countactLogoRight.classList.contains("hiding")) {
+        countactLogoLeft.classList.toggle("hiding");
         countactLogoRight.classList.toggle("shown");
-        countactTextRight.hidden = !countactTextRight.hidden;
+        countactTextRight.classList.toggle("hiding");
       }
     });
   }
