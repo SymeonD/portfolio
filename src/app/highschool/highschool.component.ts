@@ -15,6 +15,20 @@ export class HighschoolComponent {
     dragElement(document.getElementById("HSKart")!);
     dragElement(document.getElementById("HSMinecraft")!);
   }
+
+  // On page resize
+  onResize(event: any) {
+    // Get the HSContainers
+    var containers = document.getElementsByClassName("HSContainer");
+    for(var i = 0; i < containers.length; i++) {
+      // Get the element
+      var element = containers[i].children[0] as HTMLElement;
+      // Set the left position of the element to ""
+      element.style.left = "";
+      // Set the right position of the element to "0px"
+      element.style.right = "0px";
+    }
+  }
 }
 
 function dragElement(elmnt: HTMLElement) {
@@ -50,14 +64,14 @@ function dragElement(elmnt: HTMLElement) {
     // Get the width of the element
     var elmntWidth = elmnt.children[0].getBoundingClientRect().width;
 
-    if(elmntNewPos < containerRect.left || elmntNewPos > (containerRect.left+containerWidth-elmntWidth)) {
+    if(elmntNewPos < 0 || elmntNewPos > (containerWidth-elmntWidth)) {
       closeDragElement();
     }else{
       elmnt.style.left = (elmntNewPos) + "px";
     }
 
     // Change the style of the text element to remove the hidden class
-    if (elmntNewPos > containerRect.left + (containerWidth / 2) - (elmntWidth / 2)) {
+    if (elmntNewPos > (containerWidth / 2) - (elmntWidth / 2)) {
       // Get the text element
       var text = elmnt.getElementsByClassName("HSText")[0] as HTMLElement;
       // Change the style of the text element to remove the hidden class
@@ -73,7 +87,7 @@ function dragElement(elmnt: HTMLElement) {
     // When the element is at the left side of the container, the opacity is 1
     // When the element is at the middle of the container, the opacity is 0
     // When the element is at the right side of the container, the opacity is 0
-    var opacity = Math.abs((elmntNewPos - (containerRect.left + (containerWidth / 2) - (elmntWidth / 2))) / (containerWidth / 2 - elmntWidth / 2));
+    var opacity = Math.abs((elmntNewPos - ((containerWidth / 2) - (elmntWidth / 2))) / (containerWidth / 2 - elmntWidth / 2));
     var text = elmnt.getElementsByClassName("HSText")[0] as HTMLElement;
     text.style.opacity = opacity.toString();
   }
@@ -93,18 +107,18 @@ function dragElement(elmnt: HTMLElement) {
     var elmntWidth = elmnt.children[0].getBoundingClientRect().width;
 
     // Passing point
-    var passingPoint = containerRect.left + (containerWidth / 2) - (elmntWidth / 2);
+    var passingPoint = (containerWidth / 2) - (elmntWidth / 2);
 
     // Set the element's new position:
     if (elmnt.offsetLeft > passingPoint) {
       elmnt.style.transition = "all .2s cubic-bezier(0.04, 0.46, 0.36, 0.99)";
-      elmnt.style.left = containerRect.left + containerWidth - elmntWidth + "px";
+      elmnt.style.left = (containerWidth - elmntWidth) + "px";
 
       // Toggle the classlist shown to the element
       elmnt.classList.remove("shown");
     } else {
       elmnt.style.transition = "all .2s cubic-bezier(0.04, 0.46, 0.36, 0.99)";
-      elmnt.style.left = containerRect.left + "px";
+      elmnt.style.left = "0px";
 
       // Toggle the classlist shown to the element
       elmnt.classList.add("shown");
