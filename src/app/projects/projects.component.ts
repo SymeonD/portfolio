@@ -116,8 +116,25 @@ function dragElement(mouse_window: HTMLElement, elmnt: HTMLElement) {
 
     // Get the passing position
     var passingPosition = Math.round((elmnt.offsetLeft / 150));
+
+    console.log("passingPosition: " + passingPosition);
+
     // Set the new position
     elmnt.style.left = (passingPosition * 150) + "px";
     elmnt.style.top = (passingPosition * 150) + "px";
+
+    // Get the project elements
+    var projects_slider_items = document.getElementsByClassName("ProjectsSliderItem") as HTMLCollectionOf<HTMLElement>;
+
+    // For the 2 elements after the passing position, set the opacity to 1
+    // For the other elements, set the opacity to 0
+    passingPosition = Math.abs(passingPosition);
+    for (let i = 0; i < projects_slider_items.length; i++) {
+      if (i >= passingPosition && i < passingPosition + 3) {
+        projects_slider_items[i].style.opacity = "1";
+      } else {
+        projects_slider_items[i].style.opacity = "0";
+      }
+    }
   }
 }
