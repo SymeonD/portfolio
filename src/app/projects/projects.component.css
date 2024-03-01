@@ -91,13 +91,20 @@
     padding: 20px;
 }
 
+#Itemscontainer{
+    position: absolute;
+    background-color: aliceblue;
+    /* width: 450px;
+    height: 450px; */
+}
+
 .ProjectsSlider{
     display: flex;
 
-    background-color: aliceblue;
+    border: 1px solid blueviolet;
     position: relative;
     width: 450px;
-    height: 390px;
+    height: 450px;
 }
 
 .ProjectsSliderItem{

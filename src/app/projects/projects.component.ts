@@ -22,7 +22,7 @@ export class ProjectsComponent {
 
     // Add a transform to each element, the first 0% on x, then 20% per element
     for (let i = 0; i < projects_slider_items.length; i++) {
-      projects_slider_items[i].style.top = (i * 120) + "px";
+      projects_slider_items[i].style.top = (i * 150) + "px";
       projects_slider_items[i].style.left = (i * 150) + "px";
     }
 
@@ -34,23 +34,23 @@ export class ProjectsComponent {
       }
     }
 
-    // Make the elements draggable
-    for (let i = 0; i < projects_slider_items.length; i++) {
-      dragElement(projects_slider_items[i]);
-    }
+    // Make the elements container draggable
+    var items_container = document.getElementById("Itemscontainer") as HTMLElement;
+    dragElement(projects_slider, items_container);
   }
 }
 
-function dragElement(elmnt: HTMLElement) {
-  var pos1 = 0, pos3 = 0;
-  elmnt.onmousedown = dragMouseDown;
+// Function to drag element diagonally
+function dragElement(mouse_window: HTMLElement, elmnt: HTMLElement) {
+  var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+  mouse_window.onmousedown = dragMouseDown;
 
   function dragMouseDown(e: any) {
     e = e || window.event;
     e.preventDefault();
     // get the mouse cursor position at startup:
     pos3 = e.clientX;
-    elmnt.style.transition = "none";
+    pos4 = e.clientY;
     document.onmouseup = closeDragElement;
     // call a function whenever the cursor moves:
     document.onmousemove = elementDrag;
@@ -59,27 +59,65 @@ function dragElement(elmnt: HTMLElement) {
   function elementDrag(e: any) {
     e = e || window.event;
     e.preventDefault();
-    // calculate the new cursor position:
-    pos1 = pos3 - e.clientX;
+    // calculate the biggest difference between the x and y positions
+    var xDiff = pos3 - e.clientX;
+    var yDiff = pos4 - e.clientY;
+    
+    // if the x difference is bigger than the y difference, move the element diagonally
+    if (Math.abs(xDiff) > Math.abs(yDiff)) {
+      pos1 = xDiff;
+      pos2 = xDiff;
+    } else {
+      pos1 = yDiff;
+      pos2 = yDiff;
+    }
+
+    // calculate the new cursor position using the biggest difference
+    // pos1 = pos3 - e.clientX;
+    // pos2 = pos4 - e.clientY;
     pos3 = e.clientX;
+    pos4 = e.clientY;
+    // set the element's new position:
+    elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+    elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
 
-    let elmntNewPos = elmnt.offsetLeft - pos1;
+    // Get the slider container
+    var projects_slider = document.getElementsByClassName("ProjectsSlider")[0] as HTMLElement;
+    // Get the slider container geometry
+    var projects_slider_rect = projects_slider.getBoundingClientRect();
 
-    // Get the container element
-    var container = elmnt.parentElement;
-    // Get the offset position of the container
-    var container_rect = container!.getBoundingClientRect();
+    // Projects elements
+    // Get the project elements
+    var projects_slider_items = document.getElementsByClassName("ProjectsSliderItem") as HTMLCollectionOf<HTMLElement>;
 
-    // If the new position is inside the container, move the element
-    if (elmntNewPos >= container_rect.left && elmntNewPos + elmnt.offsetWidth <= container_rect.right) {
-      elmnt.style.left = elmntNewPos + "px";
-      console.log(elmnt.style.left);
+    // For the items not in the container rectangle, set the opacity to percentage of how much is visible
+    for (let i = 0; i < projects_slider_items.length; i++) {
+      var item_rect = projects_slider_items[i].getBoundingClientRect();
+      if (item_rect.right > projects_slider_rect.right) {
+        projects_slider_items[i].style.opacity = "" + (1 - Math.abs((item_rect.right - projects_slider_rect.right) / (item_rect.right - item_rect.left)));
+      } else if (item_rect.left < projects_slider_rect.left){
+        projects_slider_items[i].style.opacity = "" + (1 - Math.abs((item_rect.left - projects_slider_rect.left) / (item_rect.right - item_rect.left)));
+      } else {
+        projects_slider_items[i].style.opacity = "1";
+      }
+    }
+
+    // If the element is dragged outside the window, set it back to the window
+    if(elmnt.offsetLeft <= (450 - projects_slider_items.length * 150) || elmnt.offsetLeft >= 0) {
+      closeDragElement();
     }
   }
 
   function closeDragElement() {
+    console.log("closeDragElement");
     // stop moving when mouse button is released:
     document.onmouseup = null;
     document.onmousemove = null;
+
+    // Get the passing position
+    var passingPosition = Math.round((elmnt.offsetLeft / 150));
+    // Set the new position
+    elmnt.style.left = (passingPosition * 150) + "px";
+    elmnt.style.top = (passingPosition * 150) + "px";
   }
 }
