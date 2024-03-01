@@ -12,13 +12,10 @@ body{
     color: var(--primary-color);
     align-items: center;
     display: flex;
-
-    
 }
 
 app-root{
     width: 100%;
-    scroll-snap-type: y mandatory;
 }
 
 app-root > *{

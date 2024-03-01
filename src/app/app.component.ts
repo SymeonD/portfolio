@@ -23,4 +23,12 @@ import { FooterComponent } from './footer/footer.component';
 })
 export class AppComponent {
 
+  ngOnInit(): void {
+    if(CSS.supports("scroll-snap-type: start")) {
+      console.log("snap-align is supported");
+    }else{
+      console.log("snap-align is not supported");
+    }
+  }
+
 }

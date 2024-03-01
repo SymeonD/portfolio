@@ -111,15 +111,12 @@ function dragElement(mouse_window: HTMLElement, elmnt: HTMLElement) {
   }
 
   function closeDragElement() {
-    console.log("closeDragElement");
     // stop moving when mouse button is released:
     document.onmouseup = null;
     document.onmousemove = null;
 
     // Get the passing position
     var passingPosition = Math.round((elmnt.offsetLeft / 150));
-
-    console.log("passingPosition: " + passingPosition);
 
     // Set the new position
     elmnt.style.left = (passingPosition * 150) + "px";
