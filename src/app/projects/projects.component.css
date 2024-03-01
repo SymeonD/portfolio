@@ -93,16 +93,15 @@
 
 #Itemscontainer{
     position: absolute;
-    background-color: aliceblue;
 }
 
 .ProjectsSlider{
     display: flex;
 
-    border: 1px solid blueviolet;
     position: relative;
     width: 450px;
     height: 450px;
+    cursor:all-scroll;
 }
 
 .ProjectsSliderItem{
@@ -112,4 +111,5 @@
     flex-direction: column;
 
     position: absolute;
+    cursor: pointer;
 }
