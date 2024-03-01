@@ -1,6 +1,6 @@
 #Countact{
     width: 100%;
-    height: 100vh;
+    height: 80vh;
     display: flex;
     flex-direction: column;
     margin: auto;
@@ -34,15 +34,6 @@
     transform: translateX(-10%) translateY(-50%);
 }
 
-#CountactImage{
-    object-fit: cover;
-    opacity: 0.2;
-    position: absolute;
-    width: 100%;
-    height: 100vh;
-    z-index: -1;
-}
-
 #CountactBottomWhiteBlur{
     width: 150%;
     height: 10%;
@@ -72,7 +63,8 @@
 
 #CountactSlider > div{
     width: 100%;
-    height: 70%;
+    height: 90%;
+    max-height: 545px;
     display: flex;
     align-items: center;
     transition: all 0.5s ease-in-out;

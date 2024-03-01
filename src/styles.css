@@ -12,10 +12,17 @@ body{
     color: var(--primary-color);
     align-items: center;
     display: flex;
+
+    
 }
 
 app-root{
     width: 100%;
+    scroll-snap-type: y mandatory;
+}
+
+app-root > *{
+    scroll-snap-align: center;
 }
 
 /* Define variables for colors */
@@ -27,3 +34,5 @@ app-root{
     --quinary-color: #FEFEFE;
     --body-max-width: 1500px;
 }
+
+
