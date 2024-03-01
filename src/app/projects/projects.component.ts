@@ -51,6 +51,7 @@ function dragElement(mouse_window: HTMLElement, elmnt: HTMLElement) {
     // get the mouse cursor position at startup:
     pos3 = e.clientX;
     pos4 = e.clientY;
+    elmnt.style.transition = "none";
     document.onmouseup = closeDragElement;
     // call a function whenever the cursor moves:
     document.onmousemove = elementDrag;
@@ -136,5 +137,6 @@ function dragElement(mouse_window: HTMLElement, elmnt: HTMLElement) {
         projects_slider_items[i].style.opacity = "0";
       }
     }
+    elmnt.style.transition = "all .5s cubic-bezier(0.04, 0.46, 0.36, 0.99)";
   }
 }
