@@ -22,7 +22,7 @@ export class MenuComponent {
         event.preventDefault();
         const href = link.getAttribute('href')!;
         const target = document.querySelector(href)!;
-        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        target.scrollIntoView({ behavior: 'smooth', block: 'center' });
       });
     });
   }

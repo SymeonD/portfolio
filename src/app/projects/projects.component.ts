@@ -43,6 +43,7 @@ export class ProjectsComponent {
 // Function to drag element diagonally
 function dragElement(mouse_window: HTMLElement, elmnt: HTMLElement) {
   var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+  var projects_slider_items = document.getElementsByClassName("ProjectsSliderItem") as HTMLCollectionOf<HTMLElement>;
   mouse_window.onmousedown = dragMouseDown;
 
   function dragMouseDown(e: any) {
@@ -52,6 +53,10 @@ function dragElement(mouse_window: HTMLElement, elmnt: HTMLElement) {
     pos3 = e.clientX;
     pos4 = e.clientY;
     elmnt.style.transition = "none";
+    // Set the display to "" for the elements not in the container rectangle
+    for (let i = 0; i < projects_slider_items.length; i++) {
+      projects_slider_items[i].style.display = "";
+    }
     document.onmouseup = closeDragElement;
     // call a function whenever the cursor moves:
     document.onmousemove = elementDrag;
@@ -87,10 +92,6 @@ function dragElement(mouse_window: HTMLElement, elmnt: HTMLElement) {
     // Get the slider container geometry
     var projects_slider_rect = projects_slider.getBoundingClientRect();
 
-    // Projects elements
-    // Get the project elements
-    var projects_slider_items = document.getElementsByClassName("ProjectsSliderItem") as HTMLCollectionOf<HTMLElement>;
-
     // For the items not in the container rectangle, set the opacity to percentage of how much is visible
     for (let i = 0; i < projects_slider_items.length; i++) {
       var item_rect = projects_slider_items[i].getBoundingClientRect();
@@ -110,15 +111,12 @@ function dragElement(mouse_window: HTMLElement, elmnt: HTMLElement) {
   }
 
   function closeDragElement() {
-    console.log("closeDragElement");
     // stop moving when mouse button is released:
     document.onmouseup = null;
     document.onmousemove = null;
 
     // Get the passing position
     var passingPosition = Math.round((elmnt.offsetLeft / 150));
-
-    console.log("passingPosition: " + passingPosition);
 
     // Set the new position
     elmnt.style.left = (passingPosition * 150) + "px";
@@ -135,6 +133,8 @@ function dragElement(mouse_window: HTMLElement, elmnt: HTMLElement) {
         projects_slider_items[i].style.opacity = "1";
       } else {
         projects_slider_items[i].style.opacity = "0";
+        // Display none for the elements not in the container rectangle
+        projects_slider_items[i].style.display = "none";
       }
     }
     elmnt.style.transition = "all .5s cubic-bezier(0.04, 0.46, 0.36, 0.99)";
