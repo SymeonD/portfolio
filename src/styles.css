@@ -18,10 +18,6 @@ app-root{
     width: 100%;
 }
 
-app-root > *{
-    scroll-snap-align: center;
-}
-
 /* Define variables for colors */
 :root{
     --primary-color: #132744;
