@@ -111,13 +111,11 @@ function dragElement(elmnt: HTMLElement) {
 
     // Set the element's new position:
     if (elmnt.offsetLeft > passingPoint) {
-      elmnt.style.transition = "all .2s cubic-bezier(0.04, 0.46, 0.36, 0.99)";
       elmnt.style.left = (containerWidth - elmntWidth) + "px";
 
       // Toggle the classlist shown to the element
       elmnt.classList.remove("shown");
     } else {
-      elmnt.style.transition = "all .2s cubic-bezier(0.04, 0.46, 0.36, 0.99)";
       elmnt.style.left = "0px";
 
       // Toggle the classlist shown to the element
@@ -128,5 +126,6 @@ function dragElement(elmnt: HTMLElement) {
       // Set the opacity of the text element to 1
       text.style.opacity = "1";
     }
+    elmnt.style.transition = "all .2s cubic-bezier(0.04, 0.46, 0.36, 0.99)";
   }
 }
