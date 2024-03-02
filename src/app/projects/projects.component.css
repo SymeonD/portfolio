@@ -56,6 +56,22 @@
     position: relative;
 }
 
+.SliderItemImage:hover > img{
+    /* Animate to make it seems like it is bigger */
+    transform: scale(1.1);
+    box-shadow: 15px 15px 20px rgba(0,0,0,0.5);
+}
+
+.SliderItemImage:hover > div{
+    /* Animate to make it seems like it is bigger */
+    transform: scale(1.1) translateY(-50px);
+}
+
+.SliderItemImage > div{
+    /* For hover */
+    transition: all 0.5s;
+}
+
 .SliderItemImage > img{
     align-self: center;
     width: 100px;
@@ -63,6 +79,9 @@
     object-position: top;
     border-radius: 20%;
     box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
+
+    /* For hover */
+    transition: all 0.5s;
 }
 
 .SliderImageTitle{
