@@ -91,7 +91,7 @@
     width: fit-content;
     padding: 5px 10px;
     border-radius: 40px;
-    background-color: rgb(135, 184, 140);
+    background-color: var(--tertiary-color);
     align-self: flex-end;
 
     position: absolute;

@@ -66,6 +66,23 @@
 .IUTSlider:hover{
     width: 50%;
     background-color: rgba(0,0,0,0.1);
+    cursor: pointer;
+}
+
+.IUTSlider:hover .IUTText{
+    opacity: 100%;
+    font-size: 1em;
+}
+
+
+.IUTSlider.focused{
+    width: 50%;
+    background-color: rgba(0,0,0,0.1);
+}
+
+.IUTSlider.focused .IUTText{
+    opacity: 100%;
+    font-size: 1em;
 }
 
 .IUTSlider img{
