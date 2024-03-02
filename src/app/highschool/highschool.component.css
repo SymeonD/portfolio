@@ -37,7 +37,7 @@
     justify-content: center;
     align-content: center;
     height: 100%;
-    width: 80%;
+    width: 100%;
     max-width: var(--body-max-width);
     align-self: center;
 }
@@ -49,8 +49,8 @@
     align-content: center;
 
     height: 100%;
+    margin-left: 10%;
     margin-top: 10%;
-    margin-right: 5%;
 }
 
 #HighSchoolSliders{
@@ -59,7 +59,7 @@
     justify-content: center;
     height: fit-content;
     width: 100%;
-    margin: 50px 0px;
+    margin: 50px 10%;
 }
 
 .HSContainer{

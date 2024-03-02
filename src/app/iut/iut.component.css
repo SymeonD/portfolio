@@ -10,25 +10,20 @@
 #IUT{
     width: 100%;
     max-width: var(--body-max-width);
-    height: 70vh;
     display: flex;
     margin: auto;
     flex-direction: row;
     overflow-y: clip;
     overflow-x: clip;
     justify-content: space-between;
-    align-items: center;
 }
 
 #IUT .subTitle{
     display: flex;
     flex-direction: column;
-    justify-content: start;
-    align-content: center;
 
-    height: 50%;
     margin-top: 10%;
-    margin-right: 5%;
+    margin-left: 10%;
 }
 
 .IUTSliderContainer{
@@ -37,8 +32,11 @@
     justify-content: end;
     align-content: center;
     height: 45vh;
+    max-height: 600px;
     width: 100%;
     max-width: 1000px;
+
+    margin: 50px 10%;
 }
 
 .IUTSlider{

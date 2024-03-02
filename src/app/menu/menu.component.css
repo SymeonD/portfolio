@@ -6,11 +6,13 @@
 
 #Menu{
     position: fixed;
-    top: 0;
+    top: -80px;
     width: 100%;
     z-index: 5;
     max-width: var(--body-max-width);
     align-self: center;
+
+    transition: 0.5s;
 }
 
 li{
@@ -49,13 +51,13 @@ img.logo{
 }
 
 #MenuColor{
-    position: fixed;
+    position: absolute;
     top: 0;
     width: 150%;
-    height: 200px;
+    height: 160px;
     z-index: -1;
     transform: translateX(-25%) translateY(-50%);
 
     background-color: var(--quinary-color);
-    filter: blur(25px);
+    /* filter: blur(25px); */
 }

@@ -18,27 +18,10 @@
     width: 30%;
     display: flex;
     flex-direction: column;
-    margin: 5% 10%;
+    margin-left: 10%;
+    margin-top: 10%;
     overflow-y: clip;
     overflow-x: clip;
-}
-
-#ProjectsTopWhiteBlur{
-    width: 150%;
-    height: 50%;
-    background-color: var(--quinary-color);
-    filter: blur(25px);
-    background-size: cover;
-    transform: translateX(-10%) translateY(-50%);
-}
-
-#ProjectsBottomWhiteBlur{
-    width: 150%;
-    height: 50%;
-    background-color: var(--quinary-color);
-    filter: blur(25px);
-    background-size: cover;
-    transform: translateX(-10%) translateY(50%);
 }
 
 #ProjectsBody{
@@ -46,8 +29,7 @@
     max-width: var(--body-max-width);
     height: 100%;
     display: flex;
-    justify-content: center;
-    margin: 100px 0;
+    justify-content: space-between;
 }
 
 .SliderItemImage{
@@ -108,7 +90,7 @@
 }
 
 #SliderContainer{
-    padding: 20px;
+    margin: 10%;
 }
 
 #Itemscontainer{
