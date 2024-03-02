@@ -92,18 +92,17 @@
     padding: 0%;
 }
 
-.HSContainer .HSText{
-    padding: 1%;
-
-    /* position: absolute; */
-    width: 50%;
+.HSText{
+    height: 200px;
+    overflow: clip;
 }
 
-.HSContainer > .HSText > p{
-    padding: 2%;
-    margin: 0%;
-    margin-right: 200px;
-    font-family: 'Roboto', sans-serif;
+.HSContainer .HSText{
+    padding: 0 1%;
+}
+
+.HSText p, .HSText h4{
+    margin: 0;
 }
 
 #HSISN.shown{
