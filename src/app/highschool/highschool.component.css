@@ -37,7 +37,7 @@
     justify-content: center;
     align-content: center;
     height: 100%;
-    width: 80%;
+    width: 100%;
     max-width: var(--body-max-width);
     align-self: center;
 }
@@ -49,8 +49,8 @@
     align-content: center;
 
     height: 100%;
+    margin-left: 10%;
     margin-top: 10%;
-    margin-right: 5%;
 }
 
 #HighSchoolSliders{
@@ -59,11 +59,11 @@
     justify-content: center;
     height: fit-content;
     width: 100%;
-    margin: 50px 0px;
+    margin: 50px 10%;
 }
 
 .HSContainer{
-    height: 20vh;
+    height: 255px;
     width: auto;
     display: flex;
     flex-direction: row;
@@ -92,18 +92,17 @@
     padding: 0%;
 }
 
-.HSContainer .HSText{
-    padding: 1%;
-
-    /* position: absolute; */
-    width: 50%;
+.HSText{
+    height: 200px;
+    overflow: clip;
 }
 
-.HSContainer > .HSText > p{
-    padding: 2%;
-    margin: 0%;
-    margin-right: 200px;
-    font-family: 'Roboto', sans-serif;
+.HSContainer .HSText{
+    padding: 0 1%;
+}
+
+.HSText p, .HSText h4{
+    margin: 0;
 }
 
 #HSISN.shown{

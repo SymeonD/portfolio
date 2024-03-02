@@ -24,7 +24,7 @@
 #HeroTextContainer{
     width: 100%;
     max-width: var(--body-max-width);
-    margin-top: 250px;
+    margin-top: 20vh; /* TODO: Check if work with very high monitor */
 }
 
 #HeroText{

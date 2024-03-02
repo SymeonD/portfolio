@@ -19,14 +19,17 @@ export class IutComponent {
     // Change the opacity of the text to 1
     for (let i = 0; i < IUTContainer.length; i++) {
       IUTContainer[i].addEventListener("mouseover", function() {
-        IUTText[i].style.opacity = "1";
-        // Set font size to 1.5rem
-        IUTText[i].style.fontSize = "1em";
+        // Remove the focused class from all the IUT Containers
+        if(!IUTContainer[i].classList.contains("focused")){
+          for (let j = 0; j < IUTContainer.length; j++) {
+            IUTContainer[j].classList.remove("focused");
+          }
+        }
       });
-      IUTContainer[i].addEventListener("mouseout", function() {
-        IUTText[i].style.opacity = "0";
-        // Set font size to 0rem
-        IUTText[i].style.fontSize = "0em";
+
+      // Add an event listener to the IUT Containers when it is clicked
+      IUTContainer[i].addEventListener("click", function() {
+        IUTContainer[i].classList.toggle("focused");
       });
     }
   }
