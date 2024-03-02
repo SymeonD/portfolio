@@ -63,7 +63,7 @@
 }
 
 .HSContainer{
-    height: 20vh;
+    height: 255px;
     width: auto;
     display: flex;
     flex-direction: row;

@@ -8,7 +8,7 @@
 }
 
 #Transition{
-    height: 70vh;
+    height: 880px;
     width: 100%;
     max-width: var(--body-max-width);
     display: flex;

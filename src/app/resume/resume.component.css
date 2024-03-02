@@ -27,7 +27,7 @@
 
 #ResumeImage{
     width: 70%;
-    max-height: 30vh;
+    max-height: 420px;
     padding: 2%;
     transition: all 1s ease-in-out;
 }

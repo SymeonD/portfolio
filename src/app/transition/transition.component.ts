@@ -17,6 +17,7 @@ export class TransitionComponent {
     var TI2 = document.getElementById("TI2") as HTMLElement;
     var TI3 = document.getElementById("TI3") as HTMLElement;
     // Event listener for the scroll event
+    // TODO: Change the scroll comparator based on the length of the page
     window.addEventListener("scroll", function() {
       // Get the scroll position
       var scroll = window.scrollY;

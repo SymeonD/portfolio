@@ -30,9 +30,9 @@ export class MenuComponent {
     window.onscroll = () => {
       var currentScrollPos = window.scrollY;
       if (prevScrollpos > currentScrollPos) {
-        document.getElementById("Menu")!.style.top = "0";
+        document.getElementById("Menu-container")!.style.top = "0";
       } else {
-        document.getElementById("Menu")!.style.top = "-80px";
+        document.getElementById("Menu-container")!.style.top = "-80px";
       }
       prevScrollpos = currentScrollPos;
     }

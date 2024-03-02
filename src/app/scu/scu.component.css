@@ -10,7 +10,7 @@
 #SCU{
     width: 100%;
     max-width: var(--body-max-width);
-    height: 60vh;
+    /* height: 60vh; */
     max-height: 750px;
     display: flex;
     margin: auto;
