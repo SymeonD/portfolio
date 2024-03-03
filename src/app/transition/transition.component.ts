@@ -20,8 +20,6 @@ export class TransitionComponent {
     // TODO: Change the scroll comparator based on the length of the page
     window.addEventListener("scroll", function() {
 
-      console.log(window.scrollY);
-
       // If window size more than 900px, then do the parallax effect
       if (window.innerHeight > 900) {
         // Get the scroll position
