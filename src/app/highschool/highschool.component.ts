@@ -34,6 +34,8 @@ export class HighschoolComponent {
 function dragElement(elmnt: HTMLElement) {
   var pos1 = 0, pos3 = 0;
   elmnt.onmousedown = dragMouseDown;
+  // For mobile
+  elmnt.ontouchstart = dragMouseDown;
 
   function dragMouseDown(e: any) {
     e = e || window.event;
@@ -42,8 +44,12 @@ function dragElement(elmnt: HTMLElement) {
     pos3 = e.clientX;
     elmnt.style.transition = "none";
     document.onmouseup = closeDragElement;
+    // For mobile
+    document.ontouchend = closeDragElement;
     // call a function whenever the cursor moves:
     document.onmousemove = elementDrag;
+    // For mobile
+    document.ontouchmove = elementDrag;
   }
 
   function elementDrag(e: any) {
@@ -96,6 +102,9 @@ function dragElement(elmnt: HTMLElement) {
     // stop moving when mouse button is released:
     document.onmouseup = null;
     document.onmousemove = null;
+    // For mobile
+    document.ontouchend = null;
+    document.ontouchmove = null;
 
     // Get the container element
     var container = elmnt.parentElement;

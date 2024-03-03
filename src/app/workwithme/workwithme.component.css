@@ -90,3 +90,42 @@
 mat-error{
     font-size: 0.8em;
 }
+
+/* For mobile version */
+@media (max-width: 900px){
+
+    #WorkWithMe{
+        width: 100%;
+        margin-top: 10%;
+    }
+
+    #WWMText{
+        flex-direction: column;
+    }
+
+    #WhatICanDo, #ContactMe{
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    #WhatICanDoTechno img{
+        max-width: 10%;
+        max-height: 10%;
+    }
+
+    #ContactMe input, #ContactMe textarea{
+        max-width: 100%;
+    }
+
+    #BottomForm{
+        flex-direction: column;
+    }
+
+    #BottomForm button{
+        width: 100%;
+    }
+
+    #BottomForm mat-label{
+        width: 100%;
+    }
+}

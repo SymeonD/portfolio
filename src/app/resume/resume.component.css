@@ -43,3 +43,40 @@
     object-position: top;
     border-radius: 10px;
 }
+
+/* For mobile version */
+@media (max-width: 900px){
+    #Resume{
+        width: 90%;
+        flex-direction: column;
+    }
+
+    #ResumeText{
+        width: fit-content;
+    }
+
+    #ResumeImage{
+        width: 100%;
+        box-sizing: border-box; /* For borders */
+        height: fit-content;
+        padding: 4%;
+    }
+
+    #ResumeImage img{
+        width: 100%;
+        height: 10vh;
+        object-fit: cover;
+        object-position: top;
+        border-radius: 10px;
+        transition: all 1s ease-in-out;
+    }
+
+    #ResumeImage.expand img{
+        width: 100%;
+        height: 50vh;
+        object-fit: cover;
+        object-position: top;
+        border-radius: 10px;
+        /* transition: all 1s ease-in-out; */
+    }
+}

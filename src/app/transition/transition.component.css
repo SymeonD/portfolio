@@ -65,3 +65,38 @@
     width: 235px;
     /* Parallax */
 }
+
+/* For mobile version */
+@media (max-width: 900px){
+    #Transition{
+        flex-direction: column;
+        height: fit-content;
+    }
+
+    #TransitionText{
+        width: 80%;
+        margin-left: 0;
+    }
+
+    #TransitionImages{
+        max-width: 100%;
+        margin: 50px;
+    }
+
+    #TransitionImages img{
+        max-width: 50%;
+        max-height: 50%;
+    }
+
+    #TransitionImages > #TI1{
+        transform: translateX(20%) translateY(-60%);
+    }
+
+    #TransitionImages > #TI3{
+        transform: translateX(0%) translateY(0%);
+    }
+
+    #TransitionImages > #TI3{
+        transform: translateX(-40%) translateY(50%);
+    }
+}

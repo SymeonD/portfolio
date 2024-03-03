@@ -108,3 +108,73 @@
 #HSISN.shown{
     width: fit-content;
 }
+
+/* For mobile version */
+@media (max-width: 900px){
+    #HighSchoolText{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-content: center;
+        height: 100%;
+        width: 100%;
+        max-width: var(--body-max-width);
+        align-self: center;
+    }
+
+    #HighSchoolSliders{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: fit-content;
+        width: 100%;
+        margin: 50px 10%;
+    }
+
+    .HSContainer{
+        height: 255px;
+        width: auto;
+        display: flex;
+        flex-direction: row;
+        justify-content: end;
+
+        overflow-x: hidden;
+        overflow-y: hidden;
+        position: relative;
+    }
+
+    .HSContainer > div{
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        height: fit-content;
+    }
+
+    #HSISN, #HSMinecraft, #HSKart{
+        position: absolute;
+        width: auto;
+        cursor: move;
+    }
+
+    #HighSchoolSliders .HSTitle{
+        margin: 0%;
+        padding: 0%;
+    }
+
+    .HSText{
+        height: 200px;
+        overflow: clip;
+    }
+
+    .HSContainer .HSText{
+        padding: 0 1%;
+    }
+
+    .HSText p, .HSText h4{
+        margin: 0;
+    }
+
+    #HSISN.shown{
+        width: fit-content;
+    }
+}

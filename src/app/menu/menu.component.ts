@@ -1,10 +1,13 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+
 @Component({
   selector: 'app-menu',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, MatButtonModule, MatIconModule],
   templateUrl: './menu.component.html',
   styleUrl: './menu.component.css'
 })
@@ -33,9 +36,16 @@ export class MenuComponent {
         document.getElementById("Menu-container")!.style.top = "0";
       } else {
         document.getElementById("Menu-container")!.style.top = "-80px";
+        document.getElementById("menu-list")!.classList.remove('menu-active');
       }
       prevScrollpos = currentScrollPos;
     }
   }
 
+  toggleMenu() {
+    // Get the menu list
+    const menu = document.getElementById('menu-list')!;
+    // Toggle the class
+    menu.classList.toggle('menu-active');
+  }
 }
