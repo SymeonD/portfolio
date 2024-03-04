@@ -91,71 +91,44 @@
 
 /* For mobile version */
 @media (max-width: 900px){
-    #HighSchoolText{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-content: center;
-        height: 100%;
+    .HighSchoolSliders{
+        margin-bottom: 50px;
+    }
+
+    .HSTitleContainer{
         width: 100%;
-        max-width: var(--body-max-width);
-        align-self: center;
-    }
-
-    #HighSchoolSliders{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        height: fit-content;
-        margin: 50px 10%;
-
-        box-sizing: border-box;
-    }
-
-    .HSContainer{
-        height: 145px;
-        width: auto;
-        max-width: 100%;
-        display: flex;
-        flex-direction: row;
-
-        overflow-x: hidden;
-        overflow-y: hidden;
         position: relative;
     }
 
-    .HSContainer > div{
-        display: flex;
-        flex-direction: row;
-        width: 100%;
+    .HSTitleContainer > img{
+        width: 20%;
+        position: absolute;
+        right: 2px;
+        top: 10px;
+    }
+
+    .HSElement{
+        margin: 5% 10%;
+        backdrop-filter: blur(10px);
+        border-radius: 10px;
+        padding: 1px 10px;
+        height: fit-content;
+
+        box-shadow: 5px 5px 10px 0px rgba(0,0,0,0.2);
+    }
+
+    .HSElement > div{
         height: fit-content;
     }
 
-    .HSContainer img{
-        width: 100px;
-    }
-
-    #HSISN, #HSMinecraft, #HSKart{
-        position: absolute;
-        width: auto;
-        cursor: move;
-    }
-
-    #HighSchoolSliders .HSTitle{
-        margin: 0%;
-        padding: 0%;
-    }
-
-    .HSText{
-        height: 200px;
-        overflow: clip;
-    }
-
-    .HSContainer .HSText{
-        padding: 0 1%;
-    }
-
-    .HSText p, .HSText h4{
+    .HSTitle{
         margin: 0;
+        padding: 5px 0;
+        width: 80%;
+    }
+
+    .HSText > h4{
+        width: 80%;
+        margin-top: 0;
     }
 }

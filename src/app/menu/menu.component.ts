@@ -26,6 +26,8 @@ export class MenuComponent {
         const href = link.getAttribute('href')!;
         const target = document.querySelector(href)!;
         target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        document.getElementById("menu-list")!.classList.remove('menu-active');
+        document.getElementById("top-container")!.style.top = "-80px";
       });
     });
 
@@ -33,10 +35,12 @@ export class MenuComponent {
     window.onscroll = () => {
       var currentScrollPos = window.scrollY;
       if (prevScrollpos > currentScrollPos) {
-        document.getElementById("Menu-container")!.style.top = "0";
+        document.getElementById("top-container")!.style.top = "0";
+        // document.getElementById("top-container")!.style.height = "60px";
       } else {
-        document.getElementById("Menu-container")!.style.top = "-80px";
+        document.getElementById("top-container")!.style.top = "-80px";
         document.getElementById("menu-list")!.classList.remove('menu-active');
+        // document.getElementById("top-container")!.style.height = "0px";
       }
       prevScrollpos = currentScrollPos;
     }

@@ -19,12 +19,18 @@ export class HighschoolComponent {
       // Get the HSContainers
       var elements = Array.from(document.getElementsByClassName("HSElement"));
       for(let element of elements) {
-        dragElement(element as HTMLElement);
+        // dragElement(element as HTMLElement);
       }
 
       // Set the left position of the element to ""
       for(let element of elements) {
         (element as HTMLElement).style.left = element.parentElement!.getBoundingClientRect().width - element.getBoundingClientRect().width + "px";
+      }
+
+      // Remove the hidden property of the texts
+      for(let element of elements) {
+        var text = (element as HTMLElement).getElementsByClassName("HSText")[0] as HTMLElement;
+        text.hidden = false;
       }
     }
   }
@@ -44,7 +50,7 @@ export class HighschoolComponent {
   }
 }
 
-function dragElement(elmnt: HTMLElement) {
+function dragElement(elmnt: HTMLElement, container: HTMLElement | null = null) {
   var pos1 = 0, pos3 = 0, touch1 = 0, touch3 = 0;
   elmnt.onmousedown = dragMouseDown;
   // For mobile
@@ -55,15 +61,14 @@ function dragElement(elmnt: HTMLElement) {
     e.preventDefault();
     // get the mouse cursor position at startup:
     pos3 = e.clientX;
-    touch3 = e.touches[0].clientX;
     elmnt.style.transition = "none";
     document.onmouseup = closeDragElement;
     // For mobile
-    document.addEventListener("touchend", closeDragElementMobile, {passive: false});
+    elmnt.addEventListener("touchend", closeDragElementMobile, {passive: false});
     // call a function whenever the cursor moves:
     document.onmousemove = elementDrag;
     // For mobile
-    document.addEventListener("touchmove", elementDragMobile, {passive: false});
+    elmnt.addEventListener("touchmove", elementDragMobile, {passive: false});
   }
 
   function elementDrag(e: any) {
@@ -132,12 +137,10 @@ function dragElement(elmnt: HTMLElement) {
     // Get the width of the container
     var containerWidth = containerRect.width;
     // Get the width of the element
-    var elmntWidth = elmnt.getBoundingClientRect().width;
+    var elmntWidth = elmnt.children[0].getBoundingClientRect().width; // Get the width of the element
 
-    console.log(elmntNewPos);
-    console.log(containerWidth);
-    if(elmntNewPos < 0 || elmntNewPos > (containerWidth-elmntWidth)) {
-      // closeDragElementMobile();
+    if(elmntNewPos <= 0 || elmntNewPos >= (containerWidth-elmntWidth)) {
+      closeDragElementMobile();
     }else{
       elmnt.style.left = (elmntNewPos) + "px";
     }
@@ -162,15 +165,16 @@ function dragElement(elmnt: HTMLElement) {
     var opacity = Math.abs((elmntNewPos - ((containerWidth / 2) - (elmntWidth / 2))) / (containerWidth / 2 - elmntWidth / 2));
     var text = elmnt.getElementsByClassName("HSText")[0] as HTMLElement;
     text.style.opacity = opacity.toString();
+
+    // Change the height of the container
+    var container = elmnt.parentElement;
+    container!.style.height = elmnt.getBoundingClientRect().height + "px";
   }
 
   function closeDragElement() {
     // stop moving when mouse button is released:
     document.onmouseup = null;
     document.onmousemove = null;
-    // For mobile
-    document.ontouchend = null;
-    document.ontouchmove = null;
 
     // Get the container element
     var container = elmnt.parentElement;
@@ -206,12 +210,9 @@ function dragElement(elmnt: HTMLElement) {
 
   // For mobile
   function closeDragElementMobile() {
-    // stop moving when mouse button is released:
-    document.onmouseup = null;
-    document.onmousemove = null;
     // For mobile
-    document.ontouchend = null;
-    document.ontouchmove = null;
+    elmnt.ontouchend = null;
+    elmnt.ontouchmove = null;
 
     // Get the container element
     var container = elmnt.parentElement;
@@ -243,5 +244,11 @@ function dragElement(elmnt: HTMLElement) {
       text.style.opacity = "1";
     }
     elmnt.style.transition = "all .2s cubic-bezier(0.04, 0.46, 0.36, 0.99)";
+
+    setTimeout(() => {
+      // Change the height of the container
+      var container = elmnt.parentElement;
+      container!.style.height = elmnt.getBoundingClientRect().height + "px";
+    }, 100);
   }
 }
