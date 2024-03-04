@@ -63,6 +63,7 @@
 #AdImage p{
     margin: 0;
     align-self: center;
+    text-align: left;
 }
 
 #MiddleText{
