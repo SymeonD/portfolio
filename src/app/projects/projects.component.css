@@ -77,6 +77,15 @@
     margin: 10%;
 }
 
+.subTitletext a{
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.subTitletext a:hover{
+    color: var(--tertiary-color);
+}
+
 /* For laptop version */
 @media (min-width: 901px){
     .SliderItemImage:hover > img{
