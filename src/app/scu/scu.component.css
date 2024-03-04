@@ -10,8 +10,6 @@
 #SCU{
     width: 100%;
     max-width: var(--body-max-width);
-    /* height: 60vh; */
-    max-height: 750px;
     display: flex;
     margin: auto;
     overflow-y: clip;
@@ -19,7 +17,7 @@
 }
 
 #SCUBody{
-    margin: 10%;
+    margin: 10% 0 10% 10%;
 }
 
 #SCUImage{
@@ -38,5 +36,9 @@
         align-self: center;
         padding: 10% 0 0;
         width: 100%;
+    }
+
+    #SCUBody{
+        margin: 10%;
     }
 }
