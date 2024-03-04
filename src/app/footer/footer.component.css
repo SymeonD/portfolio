@@ -136,7 +136,10 @@
 
     #MiddleText{
         width: 100%;
-        text-align: start;
+    }
+
+    #MiddleText p{
+        text-align: center;
     }
 
     #Contact p{

@@ -28,6 +28,7 @@ a ul:hover{
 
 #top-container{
     position: fixed;
+    top: -80px;
     width: 100%;
     z-index: 5;
     height: fit-content;

@@ -95,9 +95,17 @@
     #CountactLeftSliderText{
         left: 110%;
     }
+
+    #CountactLeftSliderText p{
+        text-align: start;
+    }
     
     #CountactRightSliderText{
         right: 110%;
+        text-align: end;
+    }
+
+    #CountactRightSliderText p{
         text-align: end;
     }
 }
@@ -118,5 +126,9 @@
         margin-top: 10%;
         margin-left: 10%;
         margin-bottom: 5%;
+    }
+
+    #CountactSlider{
+        margin-bottom: 10%;
     }
 }
