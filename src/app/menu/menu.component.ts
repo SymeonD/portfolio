@@ -18,6 +18,7 @@ export class MenuComponent {
   ngOnInit(): void {
     // Get the links
     const links = document.querySelectorAll('a.menu-item');
+    var menuScrolling = false;
 
     // Add the click event
     links.forEach((link) => {
@@ -26,13 +27,20 @@ export class MenuComponent {
         const href = link.getAttribute('href')!;
         const target = document.querySelector(href)!;
         target.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        document.getElementById("menu-list")!.classList.remove('menu-active');
         document.getElementById("top-container")!.style.top = "-80px";
+        document.getElementById("menu-list")!.classList.remove('menu-active');
+        menuScrolling = true;
+        setTimeout(() => {
+          menuScrolling = false;
+        }, 1000);
       });
     });
 
     var prevScrollpos = window.scrollY;
     window.onscroll = () => {
+      if(menuScrolling) {
+        return;
+      }
       var currentScrollPos = window.scrollY;
       if (prevScrollpos > currentScrollPos) {
         document.getElementById("top-container")!.style.top = "0";
