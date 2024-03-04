@@ -206,6 +206,12 @@ function dragElement(elmnt: HTMLElement, container: HTMLElement | null = null) {
       text.style.opacity = "1";
     }
     elmnt.style.transition = "all .2s cubic-bezier(0.04, 0.46, 0.36, 0.99)";
+
+    setTimeout(() => {
+      // Change the height of the container
+      var container = elmnt.parentElement;
+      container!.style.height = elmnt.getBoundingClientRect().height > 255 ? elmnt.getBoundingClientRect().height + "px" : "255px";
+    }, 200);
   }
 
   // For mobile
