@@ -31,7 +31,7 @@ export class ProjectsComponent {
     if(window.innerWidth > 900) {
       for (let i = 0; i < projects_slider_items.length; i++) {
         var item_rect = projects_slider_items[i].getBoundingClientRect();
-        if (Math.round(item_rect.right) > projects_slider_rect.right || item_rect.left < projects_slider_rect.left) {
+        if (item_rect.right > projects_slider_rect.right+1 || item_rect.left < projects_slider_rect.left) {
           console.log("item_rect.right: " + item_rect.right + " projects_slider_rect.right: " + projects_slider_rect.right);
           projects_slider_items[i].style.opacity = "0";
         }
