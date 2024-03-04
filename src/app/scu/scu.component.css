@@ -26,3 +26,17 @@
     align-self: end;
     padding: 10% 0;
 }
+
+/* For mobile version */
+@media (max-width: 900px){
+    #SCU{
+        flex-direction: column;
+        max-height: fit-content;
+    }
+
+    #SCUImage{
+        align-self: center;
+        padding: 10% 0 0;
+        width: 100%;
+    }
+}

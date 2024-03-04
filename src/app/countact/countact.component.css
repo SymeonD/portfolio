@@ -1,6 +1,6 @@
 #Countact{
     width: 100%;
-    max-height: 1000px;
+    height: fit-content;
     display: flex;
     flex-direction: column;
     margin: auto;
@@ -15,85 +15,108 @@
     background-attachment: fixed;
 }
 
-#Countact .subTitle{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+/* For laptop version */
+@media (min-width: 901px){
+    
+    #Countact .subTitle{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    #Countact .subTitle h2{
+        margin: 0;
+    }
+
+    #CountactBody{
+        width: 100%;
+        max-width: var(--body-max-width);
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 10% 0;
+    }
+    
+    #CountactSlider{
+        display: flex;
+        max-width: 100%;
+        align-items: center;
+        align-self: center;
+        height: 60%;
+    }
+    
+    #CountactSlider > div{
+        width: 100%;
+        height: 90%;
+        max-height: 545px;
+        display: flex;
+        align-items: center;
+        transition: all 0.5s ease-in-out;
+    }
+    
+    #CountactSlider > div > img{
+        max-width: 100%;
+        max-height: 540px;
+        cursor: pointer;
+        z-index: 2;
+    }
+    
+    #CountactRightSliderImage, #CountactLeftSliderImage{
+        position: relative;
+    }
+    
+    #CountactRightSliderImage.shown{
+        transform: translateX(350px);
+    }
+    
+    #CountactLeftSliderImage.shown{
+        transform: translateX(-350px);
+    }
+    
+    #CountactLeftSliderImage.hiding, #CountactRightSliderImage.hiding{
+        transform: translateX(0);
+        opacity: 0;
+    }
+    
+    #CountactLeftSliderText, #CountactRightSliderText{
+        position: absolute;
+        width: 350px;
+        z-index: 1;
+    
+        transition: opacity 0.5s cubic-bezier(0.42, 0, 0.13, 0.98);
+    }
+    
+    #CountactLeftSliderText.hiding, #CountactRightSliderText.hiding{
+        opacity: 0%;
+    }
+    
+    #CountactLeftSliderText{
+        left: 110%;
+    }
+    
+    #CountactRightSliderText{
+        right: 110%;
+        text-align: end;
+    }
 }
 
-#Countact .subTitle h2{
-    margin: 0;
-}
+/* For mobile version */
+@media (max-width: 900px){
+    #CountactRightSliderImage > img, #CountactLeftSliderImage > img{
+        display: none;
+    }
+    
+    #CountactRightSliderImage, #CountactLeftSliderImage{
+        padding: 0 10%;
+    }
 
-#CountactBody{
-    width: 100%;
-    max-width: var(--body-max-width);
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin: 10% 0;
-}
-
-#CountactSlider{
-    display: flex;
-    max-width: 100%;
-    align-items: center;
-    align-self: center;
-    height: 60%;
-}
-
-#CountactSlider > div{
-    width: 100%;
-    height: 90%;
-    max-height: 545px;
-    display: flex;
-    align-items: center;
-    transition: all 0.5s ease-in-out;
-}
-
-#CountactSlider > div > img{
-    max-width: 100%;
-    max-height: 540px;
-    cursor: pointer;
-    z-index: 2;
-}
-
-#CountactRightSliderImage, #CountactLeftSliderImage{
-    position: relative;
-}
-
-#CountactRightSliderImage.shown{
-    transform: translateX(350px);
-}
-
-#CountactLeftSliderImage.shown{
-    transform: translateX(-350px);
-}
-
-#CountactLeftSliderImage.hiding, #CountactRightSliderImage.hiding{
-    transform: translateX(0);
-    opacity: 0;
-}
-
-#CountactLeftSliderText, #CountactRightSliderText{
-    position: absolute;
-    width: 350px;
-    z-index: 1;
-
-    transition: opacity 0.5s cubic-bezier(0.42, 0, 0.13, 0.98);
-}
-
-#CountactLeftSliderText.hiding, #CountactRightSliderText.hiding{
-    opacity: 0%;
-}
-
-#CountactLeftSliderText{
-    left: 110%;
-}
-
-#CountactRightSliderText{
-    right: 110%;
-    text-align: end;
+    #Countact .subTitle{
+        display: flex;
+        flex-direction: column;
+        margin-top: 10%;
+        margin-left: 10%;
+        margin-bottom: 5%;
+    }
 }

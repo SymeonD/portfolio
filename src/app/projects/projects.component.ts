@@ -9,6 +9,7 @@ import { CommonModule } from '@angular/common';
   styleUrl: './projects.component.css'
 })
 export class ProjectsComponent {
+  //TODO: Fix behaviour on window size change
   ngOnInit(): void {
 
     // Get the slider container
@@ -27,16 +28,51 @@ export class ProjectsComponent {
     }
 
     // For the items not in the container rectangle, hide them
-    for (let i = 0; i < projects_slider_items.length; i++) {
-      var item_rect = projects_slider_items[i].getBoundingClientRect();
-      if (item_rect.right > projects_slider_rect.right || item_rect.left < projects_slider_rect.left) {
-        projects_slider_items[i].style.opacity = "0";
+    if(window.innerWidth > 900) {
+      for (let i = 0; i < projects_slider_items.length; i++) {
+        var item_rect = projects_slider_items[i].getBoundingClientRect();
+        if (item_rect.right > projects_slider_rect.right || item_rect.left < projects_slider_rect.left) {
+          projects_slider_items[i].style.opacity = "0";
+        }
+      }
+
+      // Make the elements container draggable if the window is smaller than the container
+      var items_container = document.getElementById("Itemscontainer") as HTMLElement;
+      dragElement(projects_slider, items_container);
+    }else{
+      // Get the caroussel containers
+      var caroussel_container = document.getElementsByClassName("CarousselPage") as HTMLCollectionOf<HTMLElement>;
+      // Move the caroussel container to the right
+      for (let i = 0; i < caroussel_container.length; i++) {
+        caroussel_container[i].style.left = i * 75 + "vw";
+      }
+
+      // Get the items container
+      var items_container = document.getElementById("Itemscontainer") as HTMLElement;
+      var limit = window.innerWidth * 0.75;
+      // Move the items container when dragged
+      projects_slider.ontouchstart = function(e: any) {
+        items_container.style.transition = "none";
+
+        var touch = e.touches[0];
+        var x = touch.clientX;
+        projects_slider.ontouchmove = function(e: any) {
+          var touch = e.touches[0];
+          var xDiff = x - touch.clientX;
+          // If the caroussel container is at 0 or at the end, don't move the items container
+          if (items_container.offsetLeft - xDiff <= 0 && items_container.offsetLeft - xDiff >= (caroussel_container.length-1) * -limit){
+            items_container.style.left = (items_container.offsetLeft - xDiff) + "px";
+            x = touch.clientX;
+          }
+        }
+      }
+      // Set the items container position when the drag ends
+      projects_slider.ontouchend = function() {
+        items_container.style.transition = "all .5s cubic-bezier(0.04, 0.46, 0.36, 0.99)";
+        var closest = Math.round((items_container.offsetLeft / -limit));
+        items_container.style.left = (closest * -limit) + "px";
       }
     }
-
-    // Make the elements container draggable
-    var items_container = document.getElementById("Itemscontainer") as HTMLElement;
-    dragElement(projects_slider, items_container);
   }
 }
 

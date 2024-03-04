@@ -46,3 +46,19 @@
     filter: blur(30px);
     background-size: cover;
 }
+
+/* For mobile version */
+@media (max-width: 900px){
+    #Hero{
+        background-image: url("../../assets/images/Low-Opacity/Hero90.jpg"); /* TODO: Rotate image when phone rotates */
+    }
+
+    #HeroText{
+        margin: 0px 50px;
+        font-size: 1.5em;
+    }
+
+    #HeroTextContainer{
+        margin-top: 10vh;
+    }
+}
