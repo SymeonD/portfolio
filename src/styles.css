@@ -18,6 +18,10 @@ app-root{
     width: 100%;
 }
 
+p{
+    text-align: justify;
+}
+
 /* Define variables for colors */
 :root{
     --primary-color: #132744;

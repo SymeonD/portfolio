@@ -9,6 +9,7 @@ import { CommonModule } from '@angular/common';
   styleUrl: './projects.component.css'
 })
 export class ProjectsComponent {
+  //TODO: Fix behaviour on window size change
   ngOnInit(): void {
 
     // Get the slider container

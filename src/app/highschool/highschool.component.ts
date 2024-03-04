@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { __addDisposableResource } from 'tslib';
 
 @Component({
   selector: 'app-highschool',
@@ -30,7 +31,7 @@ export class HighschoolComponent {
       // Remove the hidden property of the texts
       for(let element of elements) {
         var text = (element as HTMLElement).getElementsByClassName("HSText")[0] as HTMLElement;
-        text.hidden = false;
+        text.style.display = "block";
       }
     }
   }
@@ -100,12 +101,12 @@ function dragElement(elmnt: HTMLElement, container: HTMLElement | null = null) {
       // Get the text element
       var text = elmnt.getElementsByClassName("HSText")[0] as HTMLElement;
       // Change the style of the text element to remove the hidden class
-      text.hidden = true;
+      text.style.display = "none";
     } else {
       // Get the text element
       var text = elmnt.getElementsByClassName("HSText")[0] as HTMLElement;
       // Change the style of the text element to remove the hidden class
-      text.hidden = false;
+      text.style.display = "block";
     }
 
     // Change the opacity of the text depending on the position of the element
@@ -150,12 +151,12 @@ function dragElement(elmnt: HTMLElement, container: HTMLElement | null = null) {
       // Get the text element
       var text = elmnt.getElementsByClassName("HSText")[0] as HTMLElement;
       // Change the style of the text element to remove the hidden class
-      text.hidden = true;
+      text.style.display = "none";
     } else {
       // Get the text element
       var text = elmnt.getElementsByClassName("HSText")[0] as HTMLElement;
       // Change the style of the text element to remove the hidden class
-      text.hidden = false;
+      text.style.display = "block";
     }
 
     // Change the opacity of the text depending on the position of the element
