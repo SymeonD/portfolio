@@ -65,6 +65,10 @@
     text-align: center;
 }
 
+.IUTText{
+    text-align: justify;
+}
+
 @media (min-width: 901px){    
     .IUTSliderContainer{
         min-height: 565px;
