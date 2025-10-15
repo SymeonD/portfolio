@@ -1,0 +1,73 @@
+<div>
+
+    <app-menu></app-menu>
+
+    <div class="hero">
+        <h1>Notion Automation</h1>
+        <h3>Cutting information into digestible amount</h3>
+    </div>
+
+    <div class="challenge">
+        <div class="subTitle">
+            <h2>The challenge</h2>
+            <p>A block of information</p>
+        </div>
+        <div class="content">
+            Every week during my studies at southern cross university a module was given to me taking the form of a lesson on one long web-page. <br>
+            It was difficult for me to retain every information when I had to read the whole document at once, and I ususally forgot the important parts when I had to use them on the next class. <br>
+            These modules were too much information for me all at once.
+        </div>
+    </div>
+
+    <div class="idea">
+        <div class="subTitle">
+            <h2>The idea</h2>
+            <p>Dividing the information block</p>
+        </div>
+        <div class="content">
+            After identifying that the problem was the size of the information to digest at once, my idea was to reduce this amount by dividing it. <br>
+            I had made a Notion space for this project, writing ideas and linking resources of existing systems. That is when I thought, why not using Notion to organize these division of modules. <br>
+            I had already experiences in working with Notion and knew that automation tools existed, making it possible.
+        </div>
+    </div>
+
+    <div class="project">
+        <div class="subTitle">
+            <h2>The project</h2>
+            <p>Automate the division and Notion storage</p>
+        </div>
+        <div class="content">
+            Searching for automation tools I found n8n, a source-available free tool if self-hosted, offering everything I needed. <br>
+            As accessing the module information from the university needed identification, my way of getting it would first be by hand, copying and pasting the block in a Notion database page. <br>
+            That is when n8n would see a new page, read it and every time a title element appears, create a new sub-page in the database with the title and the text corresponding below. As simple as that.
+        </div>
+    </div>
+
+    <div class="addons">
+        <div class="subTitle">
+            <h2>The add-ons</h2>
+            <p>Calendars reminders, Ai generated questions</p>
+        </div>
+        <div class="content">
+            After successfully dividing the module in sub-pages easy to read, my next goal was to create reminders in my calendar linked to the sub-pages so that I could read the element in regular times along the week. <br>
+            I had to divide the number of days hours in the week by the amount of subpages and just link my calendar through n8n to easily add them to my notifications. <br>
+            Next was questions, the goal is to have questions about what I just read at the end of the sub-page so that I can verify that I understood the lesson. <br>
+            Using the text of the sub-page and a prompt, I was able to ask chatGPT for 5 questions related simply with n8n node, then adding them at the end of the sub-page.
+        </div>
+    </div>
+
+    <div class="deliverables">
+        <div class="subTitle">
+            <h2>The deliverable</h2>
+            <p>Digestible content, AI-generated questions and calendar reminders</p>
+        </div>
+        <div class="content">
+            I decided to keep the end product as a locally hosted system that I could turn on and off manually as I want to keep control over its functionnalities. <br>
+            The final stage of the product consists of division of the original module in sub-pages, with 5 AI-generated questions added at the end of each sub-page about its content. When created, each sub-page is linked to an event in my calendar allowing me to read every part of the module little by little every day until the lecture. <br>
+            I am happy about this project as I managed to make it work for my second term of studies after designing it throughout my first term, and I am using it everyday, even on my 5th term now.
+        </div>
+    </div>
+
+    <app-footer></app-footer>
+
+</div>

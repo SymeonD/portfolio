@@ -86,6 +86,11 @@
     color: var(--tertiary-color);
 }
 
+a{
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
 /* For laptop version */
 @media (min-width: 901px){
     .SliderItemImage:hover > img{

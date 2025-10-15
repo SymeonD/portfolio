@@ -1,11 +1,12 @@
 <div id="top-container">
     <div id="Menu-container">
         <div id="Menu">
-            <a href="#Hero" class="menu-item"><img class="logo" src="../../assets/logo/Logo V4.png" alt="Logo" id="Logo"></a>
+            <a href="#Hero" routerLink="/" routerLinkActive="active" ariaCurrentWhenActive="page" fragment="Hero" class="menu-item"><img class="logo" src="../../assets/logo/Logo V4.png" alt="Logo" id="Logo"></a>
             <li id="menu-list-laptop">
                 <a class="menu-item" href="#WorkWithMe"><ul>Work with me</ul></a>
                 <a class="menu-item" href="#Projects"><ul>Projects</ul></a>
                 <a class="menu-item" href="#Transition"><ul>About me</ul></a>
+                <a class="menu-item" routerLink="/notion-auto"><ul>Notion</ul></a>
             </li>
             <!-- Mobile menu button -->
             <button class="menu-button" mat-icon-button color="primary" aria-label="Example icon button with a menu icon" (click)="toggleMenu()">
@@ -16,6 +17,6 @@
     <li id="menu-list">
         <a class="menu-item" href="#WorkWithMe"><ul>Work with me</ul></a>
         <a class="menu-item" href="#Projects"><ul>Projects</ul></a>
-        <a class="menu-item" href="#Transition"><ul>About me</ul></a>
+        <a class="menu-item" href="#Transition"><ul>About me</ul></a>*
     </li>
 </div>
