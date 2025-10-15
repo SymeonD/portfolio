@@ -7,7 +7,7 @@
     overflow-y: clip;
     overflow-x: clip;
 
-    background-image: url("../../assets/images/Low-Opacity/HighSchool-low.png");
+    background-image: url("/assets/images/Low-Opacity/HighSchool-low.png");
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
