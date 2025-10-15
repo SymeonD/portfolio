@@ -9,7 +9,7 @@
     z-index: -1;
     align-items: center;
 
-    background-image: url("../../assets/images/Low-Opacity/Footer-80.png");
+    background-image: url("assets/images/Low-Opacity/Footer-80.png");
     background-size:contain;
     background-position-x: center;
     background-position-y: bottom;
@@ -106,7 +106,7 @@
 @media (max-width: 900px){
 
     #Footer{
-        background-image: url("../../assets/images/Low-Opacity/Footer-80-mobile.png");
+        background-image: url("assets/images/Low-Opacity/Footer-80-mobile.png");
     }
 
     #FooterText{

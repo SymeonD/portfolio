@@ -1,13 +1,13 @@
 .IUTSlider.Classproject{
-    background-image: url("../../assets/images/class_project.png");
+    background-image: url("assets/images/class_project.png");
 }
 
 .IUTSlider.Graduationproject{
-    background-image: url("../../assets/images/graduation_project.png");
+    background-image: url("assets/images/graduation_project.png");
 }
 
 .IUTSlider.Bdeproject{
-    background-image: url("../../assets/images/bde_project.png");
+    background-image: url("assets/images/bde_project.png");
 }
 
 #IUTContainer{
