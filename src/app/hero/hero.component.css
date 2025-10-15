@@ -4,7 +4,7 @@
     overflow-y: clip;
     overflow-x: clip;
 
-    background-image: url("/assets/images/Low-Opacity/Hero90.jpg");
+    background-image: url("/portfolio/assets/images/Low-Opacity/Hero90.jpg");
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -50,7 +50,7 @@
 /* For mobile version */
 @media (max-width: 900px){
     #Hero{
-        background-image: url("/assets/images/Low-Opacity/Hero90.jpg"); /* TODO: Rotate image when phone rotates */
+        background-image: url("/portfolio/assets/images/Low-Opacity/Hero90.jpg"); /* TODO: Rotate image when phone rotates */
     }
 
     #HeroText{
